@@ -7,16 +7,16 @@
 <MscEventRow>
 <MscEvent lifeline_ids="_LIFELINE_0" event_type="PROCESS_START" color="-" text="User
 " text_size="36 -" background="-"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="PROCESS_START" color="-" text="MENU PRINCIPAL
-APP
-" text_size="106 -" background="-"/>
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="PROCESS_START" color="-" text="CONTROLADOR
+INTERFAZ 
+HUMANO-COMPUTADOR
+" text_size="127 -" background="-"/>
 <MscEvent lifeline_ids="_LIFELINE_2" event_type="PROCESS_START" color="-" text="CONTROLADOR
  LOCALIZAR MASCOTA
 " text_size="134 -" background="-"/>
 <MscEvent lifeline_ids="_LIFELINE_3" event_type="PROCESS_START" color="-" text="HARDWARE
- CONTROLADOR
 LOCALIZADOR
-" text_size="92 -" background="-"/>
+" text_size="85 -" background="-"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
@@ -27,38 +27,36 @@ LOCALIZADOR
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_0" event_type="MESSAGE_SEND" color="#000000" text="sServicioMascota
-" identifier="_LINK_41"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sServicioMascota
-" identifier="_LINK_41"/>
-<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
-</MscEventRow>
-<MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sMascota(mID)
+<MscEvent lifeline_ids="_LIFELINE_0" event_type="MESSAGE_SEND" color="#000000" text="sServMasc(us,mID)
+" identifier="_LINK_35"/>
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sMasc(mID,us)
 " identifier="_LINK_10"/>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sMascota(mID)
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sServMasc(us,mID)
+" identifier="_LINK_35"/>
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sMasc(mID,us)
 " identifier="_LINK_10"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sPedirPosicion
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sInfoMasc(lat,long,us)
+" identifier="_LINK_40"/>
+<MscEvent lifeline_ids="_LIFELINE_0" event_type="MESSAGE_RECEIVE" color="#000000" text="sInfoMasc(lat,long,us)
+" identifier="_LINK_40"/>
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sPedirPos(mID)
 " identifier="_LINK_13"/>
-<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_RECEIVE" color="#000000" text="sPedirPosicion
+<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_RECEIVE" color="#000000" text="sPedirPos(mID)
 " identifier="_LINK_13"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_SEND" color="#000000" text="sPosicionMascota(Lat,Long)
+<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_SEND" color="#000000" text="sPos(lat,long,mID)
 " identifier="_LINK_26"/>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sPosicionMascota(Lat,Long)
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sPosMasc(lat,long,us)
+" identifier="_LINK_29"/>
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sPosMasc(lat,long,us)
+" identifier="_LINK_29"/>
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sPos(lat,long,mID)
 " identifier="_LINK_26"/>
-<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
-</MscEventRow>
-<MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sVisualizarMascotaMapa(Lat,Long)
-" identifier="_LINK_32"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sVisualizarMascotaMapa(Lat,Long)
-" identifier="_LINK_32"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
