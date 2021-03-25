@@ -29,10 +29,10 @@ LOCALIZADOR
 <MscEventRow>
 <MscEvent lifeline_ids="_LIFELINE_0" event_type="MESSAGE_SEND" color="#000000" text="sServMasc(us,mID)
 " identifier="_LINK_35"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sMasc(mID,us)
-" identifier="_LINK_10"/>
 <MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sServMasc(us,mID)
 " identifier="_LINK_35"/>
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sMasc(mID,us)
+" identifier="_LINK_10"/>
 <MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sMasc(mID,us)
 " identifier="_LINK_10"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
