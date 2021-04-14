@@ -3,7 +3,7 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="10330" language="none" diagramType="msc">
-<Item id="ITEM1" type="package" name="" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM1" type="package" name="Casos de uso" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 </Item>
 <Item id="ITEM2" type="process" name="User" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
