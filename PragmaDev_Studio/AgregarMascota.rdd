@@ -3,21 +3,24 @@
 <!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
 
 <MscDiagram message_params_visibility="full">
-<LifelineOrdering identifiers="_LIFELINE_0 _LIFELINE_1 _LIFELINE_2 _LIFELINE_3"/>
+<LifelineOrdering identifiers="_LIFELINE_0 _LIFELINE_1 _LIFELINE_2 _LIFELINE_3 _LIFELINE_4 _LIFELINE_5"/>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_0" event_type="PROCESS_START" color="-" text="User
-" text_size="36 -" background="-"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="PROCESS_START" color="-" text="CONTROLADOR 
-INTERFAZ HUMANO
+<MscEvent lifeline_ids="_LIFELINE_0" event_type="PROCESS_START" color="-" text="Usuario
+" text_size="78 -" background="-"/>
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="PROCESS_START" color="-" text=" INTERFAZ HUMANO
 COMPUTADOR
-" text_size="113 -" background="-"/>
+" text_size="168 -" background="-"/>
 <MscEvent lifeline_ids="_LIFELINE_2" event_type="PROCESS_START" color="-" text="CONTROLADOR 
-AGREGAR MASCOTA
 
-" text_size="113 -" background="-"/>
-<MscEvent lifeline_ids="_LIFELINE_3" event_type="PROCESS_START" color="-" text="HARDWARE
-ALMECENAMIENTO DTO
-" text_size="188 -" background="-"/>
+" text_size="92 -" background="-"/>
+<MscEvent lifeline_ids="_LIFELINE_3" event_type="PROCESS_START" color="-" text="SERVICIO AGREGAR 
+MASCOTA
+" text_size="127 -" background="-"/>
+<MscEvent lifeline_ids="_LIFELINE_4" event_type="PROCESS_START" color="-" text="CONSULTAR INFO
+" text_size="106 -" background="-"/>
+<MscEvent lifeline_ids="_LIFELINE_5" event_type="PROCESS_START" color="-" text="GESTOR BASE 
+DE DATOS
+" text_size="92 -" background="-"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
@@ -35,28 +38,50 @@ ALMECENAMIENTO DTO
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sGuardarMascota(us,dtoMascota)
+<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_SEND" color="#000000" text="sRegistrarMascota(us,dtoMascota)
 " identifier="_LINK_54"/>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sGuardarMascota(us,dtoMascota)
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_RECEIVE" color="#000000" text="sRegistrarMascota(us,dtoMascota)
 " identifier="_LINK_54"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sAlmacenarMascota(us,dtoMascota)
+<MscEvent lifeline_ids="_LIFELINE_2" event_type="MESSAGE_SEND" color="#000000" text="sRegistrarMascota(us,dtoMascota)
 " identifier="_LINK_58"/>
-<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_RECEIVE" color="#000000" text="sAlmacenarMascota(us,dtoMascota)
+<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_RECEIVE" color="#000000" text="sRegistrarMascota(us,dtoMascota)
 " identifier="_LINK_58"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
-<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_SEND" color="#000000" text="sEstadoTransaccion(estado ? 1 : 0)
-" identifier="_LINK_61"/>
-<MscEvent lifeline_ids="_LIFELINE_1" event_type="MESSAGE_RECEIVE" color="#000000" text="sEstadoTransaccion(estado ? 1 : 0)
-" identifier="_LINK_61"/>
+<MscEvent lifeline_ids="_LIFELINE_3" event_type="MESSAGE_SEND" color="#000000" text="sRegistrarMascota(us,dtoMascota)
+" identifier="_LINK_130"/>
+<MscEvent lifeline_ids="_LIFELINE_4" event_type="MESSAGE_RECEIVE" color="#000000" text="sRegistrarMascota(us,dtoMascota)
+" identifier="_LINK_130"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="_LIFELINE_4" event_type="MESSAGE_SEND" color="#000000" text="sRegistrarMascota(us,dtoMascota)
+" identifier="_LINK_134"/>
+<MscEvent lifeline_ids="_LIFELINE_5" event_type="MESSAGE_RECEIVE" color="#000000" text="sRegistrarMascota(us,dtoMascota)
+" identifier="_LINK_134"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="_LIFELINE_2 _LIFELINE_1" event_type="OPERATION_RETURN" color="#000000" text="sEstadoTransaccion(estado)
+
+" identifier="_LINK_217"/>
+<MscEvent lifeline_ids="_LIFELINE_3 _LIFELINE_2" event_type="OPERATION_RETURN" color="#000000" text="sEstadoTransaccion(estado)
+
+" identifier="_LINK_215"/>
+<MscEvent lifeline_ids="_LIFELINE_4 _LIFELINE_3" event_type="OPERATION_RETURN" color="#000000" text="sEstadoTransaccion(estado)
+
+" identifier="_LINK_212"/>
+<MscEvent lifeline_ids="_LIFELINE_5 _LIFELINE_4" event_type="OPERATION_RETURN" color="#000000" text="sEstadoTransaccion(estado)
+
+" identifier="_LINK_208"/>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
 <MscEventRow>
 <MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
 </MscEventRow>
-<PageSpecification pageWidth="21" pageHeight="29.7" topMargin="0" bottomMargin="0" leftMargin="0" rightMargin="0" pageFooter="FALSE" scaleFactor="1.0"/>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="0.0" bottomMargin="0.0" leftMargin="0.0" rightMargin="0.0" pageFooter="FALSE" scaleFactor="1.0"/>
 </MscDiagram>

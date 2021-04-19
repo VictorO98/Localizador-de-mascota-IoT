@@ -13,20 +13,17 @@
 
 <Symbol symbolId="SYMB21" type="hmscMscRef" xCenter="231" yCenter="319" fixedDimensions="FALSE" width="242" height="44" color="#000000" fillColor="#FFE399">
 <Description></Description>
-<Text>Editar info Usuario (us, usDto)
-</Text>
+<Text>Editar info Usuario (us, usDto)</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB22" type="hmscMscRef" xCenter="220" yCenter="396" fixedDimensions="FALSE" width="220" height="44" color="#000000" fillColor="#FFE399">
 <Description></Description>
-<Text>Eliminar Mascota (us, mId)
-</Text>
+<Text>Eliminar Mascota (us, mId)</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB23" type="hmscMscRef" xCenter="209" yCenter="473" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#FFE399">
 <Description></Description>
-<Text>Buscar Mascota (us, mId)
-</Text>
+<Text>Buscar Mascota (us, mId)</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB24" type="hmscEnd" xCenter="429" yCenter="605" fixedDimensions="TRUE" width="40" height="30" color="#000000" fillColor="#DDFFB2">
@@ -39,7 +36,7 @@
 <Text></Text>
 </Symbol>
 
-<Symbol symbolId="SYMB6" type="hmscMscRef" xCenter="143" yCenter="132" fixedDimensions="FALSE" width="176" height="44" color="#000000" fillColor="#FFE399">
+<Symbol symbolId="SYMB6" type="hmscMscRef" xCenter="143" yCenter="132" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#FFE399">
 <Description></Description>
 <Text>Login Usuario (us, pd)</Text>
 </Symbol>
@@ -101,7 +98,7 @@
 
 </Link>
 
-<Link linkId="LINK5" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK17" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text></Text>
 <Connector attachedSymbolId="SYMB5" type="void" isOutside="TRUE" side="x" position="0.0" endType="voidend">
 <Text id="1"></Text>
@@ -133,7 +130,7 @@
 
 </Link>
 
-<Link linkId="LINK7" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK19" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text></Text>
 <Connector attachedSymbolId="SYMB6" type="void" isOutside="TRUE" side="y" position="0.0" endType="voidend">
 <Text id="1"></Text>
@@ -149,7 +146,7 @@
 
 </Link>
 
-<Link linkId="LINK8" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK15" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text></Text>
 <Connector attachedSymbolId="SYMB6" type="void" isOutside="TRUE" side="y" position="0.0" endType="voidend">
 <Text id="1"></Text>
@@ -165,7 +162,7 @@
 
 </Link>
 
-<Link linkId="LINK9" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK18" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text></Text>
 <Connector attachedSymbolId="SYMB6" type="void" isOutside="TRUE" side="y" position="0.0" endType="voidend">
 <Text id="1"></Text>
@@ -181,7 +178,7 @@
 
 </Link>
 
-<Link linkId="LINK6" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK16" type="sbvoid" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text></Text>
 <Connector attachedSymbolId="SYMB6" type="void" isOutside="TRUE" side="y" position="0.0" endType="voidend">
 <Text id="1"></Text>
