@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM6" type="sdlText" text="us integer;
+pd integer;
+existeUsuario integer;" outline_color="-" background_color="-" center_coordinates="860 37" dimensions="174 62" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="192 72">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="230 87" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM2" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="230 134" dimensions="76 40" attached_symbol_id=""/>
+</Transition>
+</NonStateTransition>
+<StateTransitionBlock top_left_coordinates="389 87">
+<SdlFSMSymbol identifier="SYM3" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="476 107" dimensions="76 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="sLogin(us,pd)" outline_color="-" background_color="-" center_coordinates="476 159" dimensions="110 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM8" type="sdlSendSig" text="sValidarUsuario(us,pd)" outline_color="-" background_color="-" center_coordinates="476 211" dimensions="174 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM5" type="sdlState" text="Wait" outline_color="-" background_color="-" center_coordinates="476 263" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="835 113">
+<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Wait" outline_color="-" background_color="-" center_coordinates="960 133" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM9" type="sdlInputSig" text="sEstadoTransaccion(existeUsuario)" outline_color="-" background_color="-" center_coordinates="960 185" dimensions="250 40" attached_symbol_id=""/>
+<Transition>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM24" type="sdlDecision" text="existeUsuario" outline_color="-" background_color="-" center_coordinates="960 237" dimensions="110 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM25" type="sdlAnswer" text="1" outline_color="-" background_color="-" center_coordinates="960 289" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM27" type="sdlState" text="logged" outline_color="-" background_color="-" center_coordinates="960 341" dimensions="62 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM26" type="sdlAnswer" text="ELSE" outline_color="-" background_color="-" center_coordinates="1039 289" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM28" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="1039 341" dimensions="76 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="654 99">
+<SdlFSMSymbol identifier="SYM23" type="sdlState" text="logged" outline_color="-" background_color="-" center_coordinates="685 119" dimensions="62 40" attached_symbol_id=""/>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="428 526">
+<SdlFSMSymbol identifier="SYM29" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="522 546" dimensions="76 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM30" type="sdlInputSig" text="sRegistrarUsuario(dtoUs)" outline_color="-" background_color="-" center_coordinates="522 598" dimensions="188 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM31" type="sdlSendSig" text="sRegistrarUsuario(dtoUs)" outline_color="-" background_color="-" center_coordinates="522 650" dimensions="188 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM33" type="sdlState" text="Registering" outline_color="-" background_color="-" center_coordinates="522 702" dimensions="96 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="786 536">
+<SdlFSMSymbol identifier="SYM34" type="sdlState" text="Registering" outline_color="-" background_color="-" center_coordinates="887 556" dimensions="96 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM35" type="sdlInputSig" text="sEstadoTransaccion(estado)" outline_color="-" background_color="-" center_coordinates="887 608" dimensions="202 40" attached_symbol_id=""/>
+<Transition>
+<DecisionBlock>
+<SdlFSMSymbol identifier="SYM36" type="sdlDecision" text="estado" outline_color="-" background_color="-" center_coordinates="887 660" dimensions="62 40" attached_symbol_id=""/>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM37" type="sdlAnswer" text="1" outline_color="-" background_color="-" center_coordinates="887 712" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM42" type="sdlTask" text="registered" outline_color="-" background_color="-" center_coordinates="887 764" dimensions="90 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM39" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="887 816" dimensions="76 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+<DecisionBranch>
+<SdlFSMSymbol identifier="SYM38" type="sdlAnswer" text="ELSE" outline_color="-" background_color="-" center_coordinates="980 712" dimensions="60 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM40" type="sdlState" text="unlogged" outline_color="-" background_color="-" center_coordinates="980 764" dimensions="76 40" attached_symbol_id=""/>
+</Transition>
+</DecisionBranch>
+</DecisionBlock>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>

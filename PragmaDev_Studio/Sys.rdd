@@ -11,31 +11,32 @@
 <Description></Description>
 <Text></Text>
 
-<Symbol symbolId="SYMB10" type="sdlPrcs" xCenter="2497" yCenter="462" fixedDimensions="FALSE" width="154" height="88" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB10" type="sdlPrcs" xCenter="2497" yCenter="462" fixedDimensions="FALSE" width="132" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>consultar info</Text>
+<Text>consultarinfo
+</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB11" type="sdlPrcs" xCenter="2134" yCenter="638" fixedDimensions="FALSE" width="198" height="88" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB11" type="sdlPrcs" xCenter="2134" yCenter="638" fixedDimensions="FALSE" width="154" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>gestor base de datos</Text>
+<Text>gestorbasededatos
+</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="2134" yCenter="286" fixedDimensions="FALSE" width="132" height="88" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="2134" yCenter="286" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
 <Text>localizador</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB2" type="sdlPrcs" xCenter="374" yCenter="66" fixedDimensions="FALSE" width="242" height="66" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB2" type="sdlPrcs" xCenter="374" yCenter="66" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>INTERFAZ HUMANO COMPUTADOR
+<Text>INTERFAZHUMANOCOMPUTADOR
 </Text>
 </Symbol>
 
 <Symbol symbolId="SYMB35" type="sdlBlk" xCenter="2244" yCenter="121" fixedDimensions="TRUE" width="198" height="176" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>Servicios
-</Text>
+<Text>Servicios</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB37" type="sdlText" xCenter="242" yCenter="286" fixedDimensions="FALSE" width="330" height="198" color="#000000" fillColor="#FFFFFF">
@@ -50,8 +51,7 @@ signal sbuscarmascota(us,m);
 signal sEsmascota(us,m);
 signal sPedirdireccion;
 signal spos(lat,long,us,m);
-signal sActualizarInfo(usDto,us);
-</Text>
+signal sActualizarInfo(usDto,us);</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB8" type="sdlPrcs" xCenter="1430" yCenter="88" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
@@ -61,8 +61,7 @@ signal sActualizarInfo(usDto,us);
 </Symbol>
 
 <Link linkId="LINK167" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cUsHCI
-</Text>
+<Text>cUsHCI</Text>
 <Connector attachedSymbolId="SYMB1" type="chnl" isOutside="FALSE" side="w" position="-0.885161290323" endType="midarrow">
 <Text id="1">[]</Text>
 <Text id="2"></Text>
@@ -79,8 +78,7 @@ signal sActualizarInfo(usDto,us);
 </Link>
 
 <Link linkId="LINK184" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cCIDB
-</Text>
+<Text>cCIDB</Text>
 <Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[sEstadoTransaccion,sEsmascota]
 </Text>
@@ -103,14 +101,13 @@ sActualizarInfo]
 </Link>
 
 <Link linkId="LINK183" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cCIL
-</Text>
-<Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="-0.5" endType="midarrow">
+<Text>cCIL</Text>
+<Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="-1.0" endType="midarrow">
 <Text id="1">[spos]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<Connector attachedSymbolId="SYMB12" type="chnl" isOutside="TRUE" side="y" position="-0.25" endType="midarrow">
+<Connector attachedSymbolId="SYMB12" type="chnl" isOutside="TRUE" side="y" position="-0.5" endType="midarrow">
 <Text id="1">[sPedirdireccion]
 </Text>
 <Text id="2"></Text>
@@ -122,9 +119,8 @@ sActualizarInfo]
 </Link>
 
 <Link linkId="LINK190" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cHCIC
-</Text>
-<Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="0.666666666667" endType="midarrow">
+<Text>cHCIC</Text>
+<Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="1.0" endType="midarrow">
 <Text id="1">[sEstadoTransaccion,spos]
 </Text>
 <Text id="2"></Text>
@@ -143,9 +139,8 @@ sActualizarInfo]
 
 </Link>
 
-<Link linkId="LINK195" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cSCI
-</Text>
+<Link linkId="LINK198" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>cSCI</Text>
 <Connector attachedSymbolId="SYMB35" type="chnl" isOutside="TRUE" side="x" position="-0.575757575758" endType="midarrow">
 <Text id="1">[sEstadoTransaccion,spos]
 </Text>
@@ -167,9 +162,8 @@ sActualizarInfo]
 
 </Link>
 
-<Link linkId="LINK196" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>cCS
-</Text>
+<Link linkId="LINK197" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>cCS</Text>
 <Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="y" position="-1.0" endType="midarrow">
 <Text id="1">[sEstadoTransaccion,spos]
 </Text>
