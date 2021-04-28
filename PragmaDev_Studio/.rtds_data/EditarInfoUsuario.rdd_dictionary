@@ -12,25 +12,39 @@
 <SymbolReference symbolId="_LIFELINE_0"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM3" type="process" name="CONTROLADOR INTERFAZ HUMANO COMPUTADOR" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM3" type="process" name="INTERFAZ HUMANO COMPUTADOR" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
 <AlternateType type="block"/>
 <UsingSymbols>
 <SymbolReference symbolId="_LIFELINE_1"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM4" type="process" name="CONTROLADOR INFORMACION USUARIO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM4" type="process" name="CONTROLADOR" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
 <AlternateType type="block"/>
 <UsingSymbols>
 <SymbolReference symbolId="_LIFELINE_2"/>
 </UsingSymbols>
 </Item>
-<Item id="ITEM5" type="process" name="HARDWARE ALMACENAMIENTO DTO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM5" type="process" name="SERVICIO EDITAR INFO USUARIO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <AlternateType type="system"/>
 <AlternateType type="block"/>
 <UsingSymbols>
 <SymbolReference symbolId="_LIFELINE_3"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM6" type="process" name="CONSULTAR INFO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="_LIFELINE_4"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM7" type="process" name="GESTOR BASE DE DATOS" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="_LIFELINE_5"/>
 </UsingSymbols>
 </Item>
 </DictionaryObjects>
