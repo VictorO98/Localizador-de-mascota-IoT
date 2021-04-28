@@ -13,29 +13,30 @@
 
 <Symbol symbolId="SYMB2" type="sdlPrcs" xCenter="253" yCenter="132" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>SERVICIOAGREGARUSUARIO
-</Text>
+<Text>SERVICIOAGREGARUSUARIO</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB3" type="sdlPrcs" xCenter="253" yCenter="396" fixedDimensions="FALSE" width="220" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB3" type="sdlPrcs" xCenter="253" yCenter="396" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>SERVICIO LOCALIZAR MASCOTA</Text>
+<Text>SERVICIOLOCALIZARMASCOTA
+</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB4" type="sdlPrcs" xCenter="275" yCenter="242" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>SERVICIO AGREGAR MASCOTA</Text>
+<Text>SERVICIOAGREGARMASCOTA
+</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB5" type="sdlPrcs" xCenter="231" yCenter="319" fixedDimensions="FALSE" width="176" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>SERVICIOLOGINUSUARIO
-</Text>
+<Text>SERVICIOLOGINUSUARIO</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB6" type="sdlPrcs" xCenter="253" yCenter="528" fixedDimensions="FALSE" width="220" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB6" type="sdlPrcs" xCenter="253" yCenter="528" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>SERVICIO ELIMINAR MASCOTA</Text>
+<Text>SERVICIOELIMINARMASCOTA
+</Text>
 </Symbol>
 </Symbol>
 
@@ -70,6 +71,21 @@
 
 </Link>
 
+<Link linkId="LINK13" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>(new channel)</Text>
+<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="0.165161290323" endType="midarrow">
+<Text id="1">[]</Text>
+<Text id="2">__</Text>
+</Connector>
+<Connector attachedSymbolId="SYMB3" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
+<Text id="1">[]</Text>
+<Text id="2"></Text>
+</Connector>
+<LinkSegment orientation="h" length="253"/>
+<LinkSegment orientation="v" length="-55"/>
+
+</Link>
+
 <Link linkId="LINK12" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>(new channel)</Text>
 <Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.00516129032258" endType="midarrow">
@@ -86,21 +102,6 @@
 
 </Link>
 
-<Link linkId="LINK13" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>(new channel)</Text>
-<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="0.165161290323" endType="midarrow">
-<Text id="1">[]</Text>
-<Text id="2">__</Text>
-</Connector>
-<Connector attachedSymbolId="SYMB3" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
-<Text id="1">[]</Text>
-<Text id="2"></Text>
-</Connector>
-<LinkSegment orientation="h" length="253"/>
-<LinkSegment orientation="v" length="-55"/>
-
-</Link>
-
 <Link linkId="LINK10" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>(new channel)</Text>
 <Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.374193548387" endType="midarrow">
@@ -112,6 +113,20 @@
 <Text id="2"></Text>
 </Connector>
 <LinkSegment orientation="h" length="275"/>
+
+</Link>
+
+<Link linkId="LINK2" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Text>(new channel)</Text>
+<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.175483870968" endType="midarrow">
+<Text id="1">[]</Text>
+<Text id="2">__</Text>
+</Connector>
+<Connector attachedSymbolId="SYMB5" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
+<Text id="1">[]</Text>
+<Text id="2"></Text>
+</Connector>
+<LinkSegment orientation="h" length="231"/>
 
 </Link>
 
@@ -130,17 +145,17 @@
 
 </Link>
 
-<Link linkId="LINK2" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK5" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>(new channel)</Text>
-<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="-0.175483870968" endType="midarrow">
+<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="0.363870967742" endType="midarrow">
 <Text id="1">[]</Text>
 <Text id="2">__</Text>
 </Connector>
-<Connector attachedSymbolId="SYMB5" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
+<Connector attachedSymbolId="SYMB6" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[]</Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="h" length="231"/>
+<LinkSegment orientation="h" length="253"/>
 
 </Link>
 
@@ -157,20 +172,6 @@
 <LinkSegment orientation="v" length="-125"/>
 <LinkSegment orientation="h" length="132"/>
 <LinkSegment orientation="v" length="-121"/>
-
-</Link>
-
-<Link linkId="LINK5" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
-<Text>(new channel)</Text>
-<Connector attachedSymbolId="SYMB1" type="chnlgate" isOutside="FALSE" side="w" position="0.363870967742" endType="midarrow">
-<Text id="1">[]</Text>
-<Text id="2">__</Text>
-</Connector>
-<Connector attachedSymbolId="SYMB6" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
-<Text id="1">[]</Text>
-<Text id="2"></Text>
-</Connector>
-<LinkSegment orientation="h" length="253"/>
 
 </Link>
 </DiagramPartition>

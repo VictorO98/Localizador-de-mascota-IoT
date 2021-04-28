@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM3" type="sdlText" text="lat integer;
+long integer;
+us integer;
+m integer;" outline_color="-" background_color="-" center_coordinates="66 45" dimensions="112 78" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="176 9">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="206 24" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM2" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="206 71" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NonStateTransition>
+<StateTransitionBlock top_left_coordinates="13 136">
+<SdlFSMSymbol identifier="SYM4" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="96 156" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM5" type="sdlInputSig" text="sbuscarmascota(us, m)" outline_color="-" background_color="-" center_coordinates="96 208" dimensions="166 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM6" type="sdlSendSig" text="sbuscarmascota(us, m)" outline_color="-" background_color="-" center_coordinates="96 260" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Locating Pet" outline_color="-" background_color="-" center_coordinates="96 312" dimensions="104 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="228 136">
+<SdlFSMSymbol identifier="SYM8" type="sdlState" text="Locating Pet" outline_color="-" background_color="-" center_coordinates="305 156" dimensions="106 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM9" type="sdlInputSig" text="sPedirDireccion()" outline_color="-" background_color="-" center_coordinates="305 208" dimensions="138 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM10" type="sdlSendSig" text="spos(lat,long,us,m)" outline_color="-" background_color="-" center_coordinates="305 260" dimensions="154 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM11" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="305 312" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>
