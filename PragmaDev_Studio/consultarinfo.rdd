@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<SdlFSMDiagram language="sdl" type="prcs" is_extract="FALSE" is_temporary="FALSE">
+<SdlFSMPartition name="" needs_cleanup="FALSE">
+<SdlFSMSymbol identifier="SYM12" type="sdlText" text="us integer;
+pd integer;
+existeusuario integer;
+dtoUs integer;
+estado integer;" outline_color="-" background_color="-" center_coordinates="109 53" dimensions="176 92" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="137 126">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="167 141" dimensions="60 30" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM2" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="167 188" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NonStateTransition>
+<StateTransitionBlock top_left_coordinates="408 59">
+<SdlFSMSymbol identifier="SYM3" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="495 79" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM4" type="sdlInputSig" text="sValidarUsuario(us,pd)" outline_color="-" background_color="-" center_coordinates="495 131" dimensions="174 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM5" type="sdlSendSig" text="sValidarUsuario(us,pd)" outline_color="-" background_color="-" center_coordinates="495 183" dimensions="174 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM6" type="sdlState" text="Wait" outline_color="-" background_color="-" center_coordinates="495 235" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="736 226">
+<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Wait" outline_color="-" background_color="-" center_coordinates="861 246" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM8" type="sdlInputSig" text="sEstadoTransaccion(existeUsuario)" outline_color="-" background_color="-" center_coordinates="861 298" dimensions="250 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM9" type="sdlSendSig" text="sEstadoTransaccion(existeUsuario)" outline_color="-" background_color="-" center_coordinates="861 350" dimensions="250 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM11" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="861 402" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="173 303">
+<SdlFSMSymbol identifier="SYM13" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="268 323" dimensions="60 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM14" type="sdlInputSig" text="sRegistrarUsuario(dtoUs)" outline_color="-" background_color="-" center_coordinates="268 375" dimensions="190 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM15" type="sdlSendSig" text="sRegistrarUsuario(dtoUs)" outline_color="-" background_color="-" center_coordinates="268 427" dimensions="190 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM16" type="sdlState" text="Registering" outline_color="-" background_color="-" center_coordinates="268 479" dimensions="98 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<StateTransitionBlock top_left_coordinates="443 303">
+<SdlFSMSymbol identifier="SYM17" type="sdlState" text="Registering" outline_color="-" background_color="-" center_coordinates="545 323" dimensions="96 40" attached_symbol_id=""/>
+<NormalStateTransition>
+<SdlFSMSymbol identifier="SYM18" type="sdlInputSig" text="sEstadoTransaccion(estado)" outline_color="-" background_color="-" center_coordinates="545 375" dimensions="202 40" attached_symbol_id=""/>
+<Transition>
+<SdlFSMSymbol identifier="SYM20" type="sdlSendSig" text="sEstadoTransaccion(estado)" outline_color="-" background_color="-" center_coordinates="545 427" dimensions="204 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM21" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="545 479" dimensions="60 40" attached_symbol_id=""/>
+</Transition>
+</NormalStateTransition>
+</StateTransitionBlock>
+<PageSpecification pageWidth="21.0" pageHeight="29.7" topMargin="1.0" bottomMargin="1.0" leftMargin="1.0" rightMargin="1.0" pageFooter="TRUE" scaleFactor="1.0"/>
+</SdlFSMPartition>
+</SdlFSMDiagram>
