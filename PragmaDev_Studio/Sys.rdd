@@ -13,25 +13,22 @@
 
 <Symbol symbolId="SYMB10" type="sdlPrcs" xCenter="2497" yCenter="462" fixedDimensions="FALSE" width="132" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>consultarinfo
-</Text>
+<Text>consultarinfo</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB11" type="sdlPrcs" xCenter="2134" yCenter="638" fixedDimensions="FALSE" width="154" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>gestorbasededatos
-</Text>
+<Text>gestorbasededatos</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="2134" yCenter="286" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="2090" yCenter="286" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
 <Text>localizador</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB2" type="sdlPrcs" xCenter="374" yCenter="66" fixedDimensions="FALSE" width="198" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
-<Text>INTERFAZHUMANOCOMPUTADOR
-</Text>
+<Text>INTERFAZHUMANOCOMPUTADOR</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB35" type="sdlBlk" xCenter="2244" yCenter="121" fixedDimensions="TRUE" width="198" height="176" color="#000000" fillColor="#C4EFED">
@@ -67,7 +64,12 @@ signal sActualizarInfo(usDto,us);</Text>
 <Text id="2"></Text>
 </Connector>
 <Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
-<Text id="1">[sLogin,sEliminarMascotas,RegistrarMascota,sRegistrarUsuario,sbuscarmascota,sActualizarInfo]
+<Text id="1">[sLogin,
+sEliminarMascota,
+sRegistrarMascota,
+sRegistrarUsuario,
+sbuscarmascota,
+sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
@@ -87,7 +89,7 @@ signal sActualizarInfo(usDto,us);</Text>
 <Connector attachedSymbolId="SYMB11" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[sValidarUsuario,
 sEliminarMascota,
-RegistrarMascota,
+sRegistrarMascota,
 sRegistrarUsuario,
 sEsmascota,
 sActualizarInfo]
@@ -100,7 +102,7 @@ sActualizarInfo]
 
 </Link>
 
-<Link linkId="LINK183" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK200" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cCIL</Text>
 <Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="-1.0" endType="midarrow">
 <Text id="1">[spos]
@@ -114,7 +116,7 @@ sActualizarInfo]
 </Connector>
 <LinkSegment orientation="h" length="-1628"/>
 <LinkSegment orientation="v" length="-165"/>
-<LinkSegment orientation="h" length="1265"/>
+<LinkSegment orientation="h" length="1221"/>
 
 </Link>
 
@@ -128,7 +130,7 @@ sActualizarInfo]
 <Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
 <Text id="1">[sValidarUsuario,
 sEliminarMascota,
-RegistrarMascota,
+sRegistrarMascota,
 sRegistrarUsuario,
 sbuscarmascota,
 sActualizarInfo]
@@ -149,7 +151,7 @@ sActualizarInfo]
 <Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="x" position="0.0" endType="midarrow">
 <Text id="1">[sValidarUsuario,
 sEliminarMascota,
-RegistrarMascota,
+sRegistrarMascota,
 sRegistrarUsuario,
 sbuscarmascota,
 sActualizarInfo]
@@ -172,7 +174,7 @@ sActualizarInfo]
 <Connector attachedSymbolId="SYMB35" type="chnl" isOutside="TRUE" side="y" position="-0.875" endType="midarrow">
 <Text id="1">[sValidarUsuario,
 sEliminarMascota,
-RegistrarMascota,
+sRegistrarMascota,
 sRegistrarUsuario,
 sbuscarmascota,
 sActualizarInfo]
