@@ -36,19 +36,20 @@
 <Text>Servicios</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB37" type="sdlText" xCenter="242" yCenter="286" fixedDimensions="FALSE" width="330" height="198" color="#000000" fillColor="#FFFFFF">
+<Symbol symbolId="SYMB37" type="sdlText" xCenter="253" yCenter="286" fixedDimensions="FALSE" width="352" height="198" color="#000000" fillColor="#FFFFFF">
 <Description></Description>
-<Text>signal sLogin(us,pd);
-signal sValidarUsuario(us,pd);
-signal sEstadoTransaccion(existeUsuario);
-signal sEliminarMascota(us,mId);
-signal sRegistrarMascota(us,dtoMascota);
-signal sRegistrarUsuario(dtoUs);
-signal sbuscarmascota(us,m);
-signal sEsmascota(us,m);
+<Text>signal sLogin(NATURAL,NATURAL);
+signal sValidarUsuario(NATURAL,NATURAL);
+signal sEstadoTransaccion(NATURAL);
+signal sEliminarMascota(NATURAL,NATURAL);
+signal sRegistrarMascota(NATURAL,NATURAL);
+signal sRegistrarUsuario(NATURAL);
+signal sbuscarmascota(NATURAL,NATURAL);
+signal sEsmascota(NATURAL,NATURAL);
 signal sPedirdireccion;
-signal spos(lat,long,us,m);
-signal sActualizarInfo(usDto,us);</Text>
+signal spos(NATURAL,NATURAL,NATURAL,NATURAL);
+signal sActualizarInfo(NATURAL,NATURAL);
+</Text>
 </Symbol>
 
 <Symbol symbolId="SYMB8" type="sdlPrcs" xCenter="1430" yCenter="88" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
