@@ -7,7 +7,7 @@
 <SdlFSMSymbol identifier="SYM1" type="sdlText" text="DCL
 us NATURAL,
 dtoMascota NATURAL,
-estado integer;" outline_color="-" background_color="-" center_coordinates="89 54" dimensions="154 78" attached_symbol_id=""/>
+estado NATURAL;" outline_color="-" background_color="-" center_coordinates="90 55" dimensions="152 76" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="52 125">
 <SdlFSMSymbol identifier="SYM2" type="sdlStart" outline_color="-" background_color="-" center_coordinates="82 140" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
