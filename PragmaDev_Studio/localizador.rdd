@@ -10,32 +10,22 @@ long NATURAL,
 us NATURAL,
 localizatorlat NATURAL,
 localizatorlong NATURAL,
-m NATURAL;" outline_color="-" background_color="-" center_coordinates="108 69" dimensions="188 118" attached_symbol_id=""/>
-<NonStateTransition top_left_coordinates="246 9">
-<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="276 24" dimensions="60 30" attached_symbol_id=""/>
+m NATURAL;" outline_color="-" background_color="-" center_coordinates="322 68" dimensions="188 118" attached_symbol_id=""/>
+<NonStateTransition top_left_coordinates="246 171">
+<SdlFSMSymbol identifier="SYM1" type="sdlStart" outline_color="-" background_color="-" center_coordinates="276 186" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM2" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="276 71" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM2" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="276 233" dimensions="60 40" attached_symbol_id=""/>
 </Transition>
 </NonStateTransition>
 <StateTransitionBlock top_left_coordinates="13 158">
-<SdlFSMSymbol identifier="SYM4" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="96 178" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM4" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="101 178" dimensions="60 40" attached_symbol_id=""/>
 <NormalStateTransition>
-<SdlFSMSymbol identifier="SYM5" type="sdlInputSig" text="sbuscarmascota(us, m)" outline_color="-" background_color="-" center_coordinates="96 230" dimensions="166 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM5" type="sdlInputSig" text="sPedirdireccion(us, m)" outline_color="-" background_color="-" center_coordinates="101 230" dimensions="176 40" attached_symbol_id=""/>
 <Transition>
-<SdlFSMSymbol identifier="SYM6" type="sdlSendSig" text="sbuscarmascota(us, m)" outline_color="-" background_color="-" center_coordinates="96 282" dimensions="166 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM7" type="sdlState" text="LocatingPet" outline_color="-" background_color="-" center_coordinates="96 334" dimensions="96 40" attached_symbol_id=""/>
-</Transition>
-</NormalStateTransition>
-</StateTransitionBlock>
-<StateTransitionBlock top_left_coordinates="230 136">
-<SdlFSMSymbol identifier="SYM8" type="sdlState" text="LocatingPet" outline_color="-" background_color="-" center_coordinates="318 156" dimensions="96 40" attached_symbol_id=""/>
-<NormalStateTransition>
-<SdlFSMSymbol identifier="SYM9" type="sdlInputSig" text="sPedirDireccion" outline_color="-" background_color="-" center_coordinates="318 208" dimensions="124 40" attached_symbol_id=""/>
-<Transition>
-<SdlFSMSymbol identifier="SYM12" type="sdlTask" text="lat := localizatorlat;
-long:=localizatorlong;" outline_color="-" background_color="-" center_coordinates="318 265" dimensions="176 50" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM10" type="sdlSendSig" text="spos(lat,long,us,m)" outline_color="-" background_color="-" center_coordinates="318 322" dimensions="152 40" attached_symbol_id=""/>
-<SdlFSMSymbol identifier="SYM11" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="318 374" dimensions="60 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM13" type="sdlTask" text="lat := localizatorlat;
+long:=localizatorlong;" outline_color="-" background_color="-" center_coordinates="101 286" dimensions="174 48" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM14" type="sdlSendSig" text="spos(lat,long,us,m)" outline_color="-" background_color="-" center_coordinates="101 342" dimensions="152 40" attached_symbol_id=""/>
+<SdlFSMSymbol identifier="SYM7" type="sdlState" text="Idle" outline_color="-" background_color="-" center_coordinates="101 394" dimensions="60 40" attached_symbol_id=""/>
 </Transition>
 </NormalStateTransition>
 </StateTransitionBlock>

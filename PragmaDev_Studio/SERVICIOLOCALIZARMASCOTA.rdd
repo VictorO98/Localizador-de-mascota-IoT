@@ -9,7 +9,7 @@ us NATURAL,
 m NATURAL,
 estado NATURAL,
 lat NATURAL,
-long NATURAL;" outline_color="-" background_color="-" center_coordinates="83 67" dimensions="126 106" attached_symbol_id=""/>
+long NATURAL;" outline_color="-" background_color="-" center_coordinates="83 67" dimensions="124 104" attached_symbol_id=""/>
 <NonStateTransition top_left_coordinates="53 176">
 <SdlFSMSymbol identifier="SYM3" type="sdlStart" outline_color="-" background_color="-" center_coordinates="83 191" dimensions="60 30" attached_symbol_id=""/>
 <Transition>
