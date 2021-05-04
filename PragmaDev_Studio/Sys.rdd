@@ -21,7 +21,7 @@
 <Text>gestorbasededatos</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="2090" yCenter="286" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB12" type="sdlPrcs" xCenter="1848" yCenter="297" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
 <Text>localizador</Text>
 </Symbol>
@@ -31,28 +31,32 @@
 <Text>INTERFAZHUMANOCOMPUTADOR</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB35" type="sdlBlk" xCenter="2244" yCenter="121" fixedDimensions="TRUE" width="198" height="176" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB35" type="sdlBlk" xCenter="2574" yCenter="110" fixedDimensions="TRUE" width="198" height="176" color="#000000" fillColor="#C4EFED">
 <Description></Description>
 <Text>Servicios</Text>
 </Symbol>
 
-<Symbol symbolId="SYMB37" type="sdlText" xCenter="253" yCenter="286" fixedDimensions="FALSE" width="352" height="198" color="#000000" fillColor="#FFFFFF">
+<Symbol symbolId="SYMB37" type="sdlText" xCenter="286" yCenter="308" fixedDimensions="FALSE" width="352" height="242" color="#000000" fillColor="#FFFFFF">
 <Description></Description>
 <Text>signal sLogin(NATURAL,NATURAL);
 signal sValidarUsuario(NATURAL,NATURAL);
 signal sEstadoTransaccion(NATURAL);
+signal sEstadoTransaccionA(NATURAL);
+signal sEstadoTransaccionB(NATURAL);
+signal sEstadoTransaccionC(NATURAL);
+signal sEstadoTransaccionD(NATURAL);
 signal sEliminarMascota(NATURAL,NATURAL);
 signal sRegistrarMascota(NATURAL,NATURAL);
 signal sRegistrarUsuario(NATURAL);
 signal sbuscarmascota(NATURAL,NATURAL);
 signal sEsmascota(NATURAL,NATURAL);
-signal sPedirdireccion;
+signal sPedirdireccion(NATURAL,NATURAL);
 signal spos(NATURAL,NATURAL,NATURAL,NATURAL);
 signal sActualizarInfo(NATURAL,NATURAL);
 </Text>
 </Symbol>
 
-<Symbol symbolId="SYMB8" type="sdlPrcs" xCenter="1430" yCenter="88" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
+<Symbol symbolId="SYMB8" type="sdlPrcs" xCenter="1584" yCenter="44" fixedDimensions="FALSE" width="110" height="44" color="#000000" fillColor="#C4EFED">
 <Description></Description>
 <Text>controlador</Text>
 </Symbol>
@@ -80,10 +84,10 @@ sActualizarInfo]
 
 </Link>
 
-<Link linkId="LINK184" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK260" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cCIDB</Text>
 <Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="0.0" endType="midarrow">
-<Text id="1">[sEstadoTransaccion,sEsmascota]
+<Text id="1">[sEstadoTransaccion]
 </Text>
 <Text id="2"></Text>
 </Connector>
@@ -97,13 +101,13 @@ sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="h" length="-1430"/>
+<LinkSegment orientation="h" length="-869"/>
 <LinkSegment orientation="v" length="176"/>
-<LinkSegment orientation="h" length="1067"/>
+<LinkSegment orientation="h" length="506"/>
 
 </Link>
 
-<Link linkId="LINK200" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK261" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cCIL</Text>
 <Connector attachedSymbolId="SYMB10" type="chnl" isOutside="TRUE" side="y" position="-1.0" endType="midarrow">
 <Text id="1">[spos]
@@ -115,13 +119,13 @@ sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="h" length="-1628"/>
-<LinkSegment orientation="v" length="-165"/>
-<LinkSegment orientation="h" length="1221"/>
+<LinkSegment orientation="h" length="-902"/>
+<LinkSegment orientation="v" length="-154"/>
+<LinkSegment orientation="h" length="253"/>
 
 </Link>
 
-<Link linkId="LINK190" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK236" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cHCIC</Text>
 <Connector attachedSymbolId="SYMB2" type="chnl" isOutside="TRUE" side="y" position="1.0" endType="midarrow">
 <Text id="1">[sEstadoTransaccion,spos]
@@ -138,14 +142,20 @@ sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="h" length="1056"/>
+<LinkSegment orientation="h" length="528"/>
+<LinkSegment orientation="v" length="-44"/>
+<LinkSegment orientation="h" length="682"/>
 
 </Link>
 
-<Link linkId="LINK198" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK284" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cSCI</Text>
-<Connector attachedSymbolId="SYMB35" type="chnl" isOutside="TRUE" side="x" position="-0.575757575758" endType="midarrow">
-<Text id="1">[sEstadoTransaccion,spos]
+<Connector attachedSymbolId="SYMB35" type="chnl" isOutside="TRUE" side="x" position="-0.808080808081" endType="midarrow">
+<Text id="1">[sEstadoTransaccionA,
+sEstadoTransaccionB,
+sEstadoTransaccionC,
+sEstadoTransaccionD,
+spos]
 </Text>
 <Text id="2"></Text>
 </Connector>
@@ -159,16 +169,17 @@ sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="v" length="220"/>
-<LinkSegment orientation="h" length="310"/>
-<LinkSegment orientation="v" length="121"/>
+<LinkSegment orientation="v" length="187"/>
+<LinkSegment orientation="h" length="3"/>
+<LinkSegment orientation="v" length="165"/>
 
 </Link>
 
-<Link linkId="LINK197" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
+<Link linkId="LINK283" type="chnl" textSegmentNum="0" color="#000000" reverseRead="FALSE" oriented="TRUE">
 <Text>cCS</Text>
-<Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="y" position="-1.0" endType="midarrow">
-<Text id="1">[sEstadoTransaccion,spos]
+<Connector attachedSymbolId="SYMB8" type="chnl" isOutside="TRUE" side="y" position="-0.318181818182" endType="midarrow">
+<Text id="1">[sEstadoTransaccion,
+spos]
 </Text>
 <Text id="2"></Text>
 </Connector>
@@ -182,9 +193,9 @@ sActualizarInfo]
 </Text>
 <Text id="2"></Text>
 </Connector>
-<LinkSegment orientation="h" length="396"/>
-<LinkSegment orientation="v" length="-22"/>
-<LinkSegment orientation="h" length="418"/>
+<LinkSegment orientation="h" length="429"/>
+<LinkSegment orientation="v" length="-4"/>
+<LinkSegment orientation="h" length="561"/>
 
 </Link>
 </DiagramPartition>
