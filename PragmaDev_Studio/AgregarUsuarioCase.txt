@@ -1,0 +1,98 @@
+PragmaDev Studio shell
+>Free run off.
+>Timers should be fired manually.
+>Unexpected messages will generate a warning.
+>send2pid -1 1 sRegistrarUsuario |{param1|=0|}
+>Signal: sRegistrarUsuario sent by: RTDS_Env(-1) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state unlogged at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARMASCOTA(2) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARUSUARIO(3) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOELIMINARMASCOTA(4) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOCALIZARMASCOTA(5) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOGINUSUARIO(6) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Task localizador(10) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarUsuario received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Signal: sRegistrarUsuario sent with priority by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state Registering at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarUsuario received by: controlador(8) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Signal: sRegistrarUsuario sent by: controlador(8) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Task controlador(8) has changed to state Registering at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarUsuario received by: SERVICIOAGREGARUSUARIO(3) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Signal: sRegistrarUsuario sent by: SERVICIOAGREGARUSUARIO(3) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Task SERVICIOAGREGARUSUARIO(3) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarUsuario received by: consultarinfo(7) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Signal: sRegistrarUsuario sent by: consultarinfo(7) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Task consultarinfo(7) has changed to state Registering at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarUsuario received by: gestorbasededatos(9) at: 0  ticks
+>{param1=0}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: gestorbasededatos(9) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccionA sent by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccionA received by: SERVICIOAGREGARUSUARIO(3) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: SERVICIOAGREGARUSUARIO(3) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task SERVICIOAGREGARUSUARIO(3) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state unlogged at: 0  ticks
+>keySdlStep
+>

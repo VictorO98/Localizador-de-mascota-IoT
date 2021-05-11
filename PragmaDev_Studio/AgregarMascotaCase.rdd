@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE Diagram SYSTEM "rtdsDiagram.dtd">
+
+<MscDiagram message_params_visibility="full">
+<LifelineOrdering identifiers="LIFELINEID_1 LIFELINEID_2 LIFELINEID_3 LIFELINEID_4 LIFELINEID_5 LIFELINEID_6 LIFELINEID_7 LIFELINEID_8 LIFELINEID_9 LIFELINEID_10 LIFELINEID_11"/>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="PROCESS_START" color="-" text="RTDS_Env
+(-1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="PROCESS_START" color="-" text="INTERFAZHUMANOCOMPUTADOR
+(1)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="PROCESS_START" color="-" text="SERVICIOAGREGARMASCOTA
+(2)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="PROCESS_START" color="-" text="SERVICIOAGREGARUSUARIO
+(3)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="PROCESS_START" color="-" text="SERVICIOELIMINARMASCOTA
+(4)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="PROCESS_START" color="-" text="SERVICIOLOCALIZARMASCOTA
+(5)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="PROCESS_START" color="-" text="SERVICIOLOGINUSUARIO
+(6)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="PROCESS_START" color="-" text="consultarinfo
+(7)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="PROCESS_START" color="-" text="controlador
+(8)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="PROCESS_START" color="-" text="gestorbasededatos
+(9)" text_size="0 -" background="-"/>
+<MscEvent lifeline_ids="LIFELINEID_11" event_type="PROCESS_START" color="-" text="localizador
+(10)" text_size="0 -" background="-"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" text="sLogin(|{param1|=0|,param2|=0|})" identifier="MSG1"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM2" identifier="COND1" background="-" text="unlogged"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="unlogged" identifier="COND1" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM7" identifier="COND2" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND2" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM7"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_4" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarusuario.rdd*SYM2" identifier="COND3" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND3" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarusuario.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_5" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioeliminarmascota.rdd*SYM3" identifier="COND4" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND4" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioeliminarmascota.rdd*SYM3"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_6" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciolocalizarmascota.rdd*SYM4" identifier="COND5" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND5" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciolocalizarmascota.rdd*SYM4"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM2" identifier="COND6" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND6" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM2" identifier="COND7" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND7" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM12" identifier="COND8" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND8" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM2" identifier="COND9" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND9" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_11" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\localizador.rdd*SYM2" identifier="COND10" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND10" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\localizador.rdd*SYM2"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM4" identifier="MSG1" text="sLogin(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM8" identifier="MSG2" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM5" identifier="COND11" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND11" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM5"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM4" identifier="MSG2" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM5" identifier="MSG3" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM7" identifier="COND12" background="-" text="Login"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Login" identifier="COND12" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM7"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM4" identifier="MSG3" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM5" identifier="MSG4" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM6" identifier="COND13" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND13" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM6"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM4" identifier="MSG4" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM5" identifier="MSG5" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM6" identifier="COND14" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND14" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM6"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM4" identifier="MSG5" text="sValidarUsuario(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM5" identifier="MSG6" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM6" identifier="COND15" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND15" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM6"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM8" identifier="MSG6" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM9" identifier="MSG7" text="sEstadoTransaccionC(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM11" identifier="COND16" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND16" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM11"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM8" identifier="MSG7" text="sEstadoTransaccionC(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM9" identifier="MSG8" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_7" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM10" identifier="COND17" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND17" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\serviciologinusuario.rdd*SYM10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM9" identifier="MSG8" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM10" identifier="MSG9" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM11" identifier="COND18" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND18" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM11"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM9" identifier="MSG9" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM87" identifier="COND19" background="-" text="logged"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="logged" identifier="COND19" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM87"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_1" event_type="MESSAGE_SEND" color="-" text="sRegistrarMascota(|{param1|=0|,param2|=0|})" identifier="MSG10"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM48" identifier="MSG10" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM49" identifier="MSG11" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM50" identifier="COND20" background="-" text="RegisteringPet"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="RegisteringPet" identifier="COND20" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM50"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM23" identifier="MSG11" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM24" identifier="MSG12" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM25" identifier="COND21" background="-" text="RegisteringPet"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="RegisteringPet" identifier="COND21" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM25"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM5" identifier="MSG12" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM6" identifier="MSG13" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM8" identifier="COND22" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND22" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM8"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM23" identifier="MSG13" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM24" identifier="MSG14" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM25" identifier="COND23" background="-" text="RegisteringPet"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="RegisteringPet" identifier="COND23" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM25"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM21" identifier="MSG14" text="sRegistrarMascota(|{param1|=0|,param2|=0|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM22" identifier="MSG15" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_10" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM23" identifier="COND24" background="-" text="Wait"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Wait" identifier="COND24" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\gestorbasededatos.rdd*SYM23"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM35" identifier="MSG15" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM36" identifier="MSG16" text="sEstadoTransaccionB(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_8" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM37" identifier="COND25" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND25" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\consultarinfo.rdd*SYM37"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM10" identifier="MSG16" text="sEstadoTransaccionB(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM11" identifier="MSG17" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_3" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM12" identifier="COND26" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND26" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\servicioagregarmascota.rdd*SYM12"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM36" identifier="MSG17" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="MESSAGE_SEND" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM37" identifier="MSG18" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_9" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM38" identifier="COND27" background="-" text="Idle"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="Idle" identifier="COND27" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\controlador.rdd*SYM38"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="MESSAGE_RECEIVE" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM52" identifier="MSG18" text="sEstadoTransaccion(|{param1|=1|})"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent lifeline_ids="LIFELINEID_2" event_type="CONDITION_START" color="-" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM86" identifier="COND28" background="-" text="logged"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text="0"/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="CONDITION_END" color="-" text="logged" identifier="COND28" model_id="PragmaDevStudio:symbol*d:\documentos\javeriana\iot\proyecto iot\pragmadev_studio\interfazhumanocomputador.rdd*SYM86"/>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+<MscEventRow>
+<MscEvent event_type="ABSOLUTE_TIME" color="#000000" text=""/>
+</MscEventRow>
+</MscDiagram>

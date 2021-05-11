@@ -1,0 +1,33 @@
+PragmaDev Studio shell
+>Free run off.
+>Timers should be fired manually.
+>Unexpected messages will generate a warning.
+>send2pid -1 1 sbuscarmascota |{param1|=0|,param2|=0|}
+>Signal: sbuscarmascota sent by: RTDS_Env(-1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state unlogged at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARMASCOTA(2) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARUSUARIO(3) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOELIMINARMASCOTA(4) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOCALIZARMASCOTA(5) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOGINUSUARIO(6) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Task localizador(10) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sbuscarmascota received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Warning. Message: sbuscarmascota ignored in process: INTERFAZHUMANOCOMPUTADOR.
+>

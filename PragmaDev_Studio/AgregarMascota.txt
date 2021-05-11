@@ -1,0 +1,170 @@
+PragmaDev Studio shell
+>Free run off.
+>Timers should be fired manually.
+>Unexpected messages will generate a warning.
+>send2pid -1 1 sLogin |{param1|=0|,param2|=0|}
+>Signal: sLogin sent by: RTDS_Env(-1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state unlogged at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARMASCOTA(2) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOAGREGARUSUARIO(3) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOELIMINARMASCOTA(4) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOCALIZARMASCOTA(5) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task SERVICIOLOGINUSUARIO(6) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Task localizador(10) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sLogin received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sValidarUsuario sent by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sValidarUsuario received by: controlador(8) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sValidarUsuario sent by: controlador(8) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task controlador(8) has changed to state Login at: 0  ticks
+>keySdlStep
+>Signal: sValidarUsuario received by: SERVICIOLOGINUSUARIO(6) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sValidarUsuario sent by: SERVICIOLOGINUSUARIO(6) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task SERVICIOLOGINUSUARIO(6) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sValidarUsuario received by: consultarinfo(7) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sValidarUsuario sent by: consultarinfo(7) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task consultarinfo(7) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sValidarUsuario received by: gestorbasededatos(9) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: gestorbasededatos(9) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccionC sent by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccionC received by: SERVICIOLOGINUSUARIO(6) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: SERVICIOLOGINUSUARIO(6) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task SERVICIOLOGINUSUARIO(6) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state logged at: 0  ticks
+>keySdlStep
+>send2pid -1 1 sRegistrarMascota |{param1|=0|,param2|=0|}
+>Signal: sRegistrarMascota sent by: RTDS_Env(-1) at: 0  ticks
+>{param1=0,param2=0}
+>Signal: sRegistrarMascota received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sRegistrarMascota sent by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state RegisteringPet at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarMascota received by: controlador(8) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sRegistrarMascota sent by: controlador(8) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task controlador(8) has changed to state RegisteringPet at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarMascota received by: SERVICIOAGREGARMASCOTA(2) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sRegistrarMascota sent by: SERVICIOAGREGARMASCOTA(2) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task SERVICIOAGREGARMASCOTA(2) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarMascota received by: consultarinfo(7) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sRegistrarMascota sent by: consultarinfo(7) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Task consultarinfo(7) has changed to state RegisteringPet at: 0  ticks
+>keySdlStep
+>Signal: sRegistrarMascota received by: gestorbasededatos(9) at: 0  ticks
+>{param1=0,param2=0}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: gestorbasededatos(9) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task gestorbasededatos(9) has changed to state Wait at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccionB sent by: consultarinfo(7) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task consultarinfo(7) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccionB received by: SERVICIOAGREGARMASCOTA(2) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: SERVICIOAGREGARMASCOTA(2) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task SERVICIOAGREGARMASCOTA(2) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Signal: sEstadoTransaccion sent by: controlador(8) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task controlador(8) has changed to state Idle at: 0  ticks
+>keySdlStep
+>Signal: sEstadoTransaccion received by: INTERFAZHUMANOCOMPUTADOR(1) at: 0  ticks
+>{param1=1}
+>keySdlStep
+>Task INTERFAZHUMANOCOMPUTADOR(1) has changed to state logged at: 0  ticks
+>keySdlStep
+>
