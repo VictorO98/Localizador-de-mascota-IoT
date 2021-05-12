@@ -27,14 +27,14 @@
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="variable" name="estado" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="variable" name="long" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM2" positions="3,0"/>
+<SymbolReference symbolId="SYM2" positions="5,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM11" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM11" type="variable" name="estado" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM2" positions="1,0"/>
+<SymbolReference symbolId="SYM2" positions="3,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM12" type="state" name="Idle" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -97,9 +97,9 @@
 <SymbolReference symbolId="SYM2" positions="2,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM9" type="variable" name="long" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM9" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM2" positions="5,0"/>
+<SymbolReference symbolId="SYM2" positions="1,0"/>
 </DefiningSymbols>
 </Item>
 </DictionaryObjects>

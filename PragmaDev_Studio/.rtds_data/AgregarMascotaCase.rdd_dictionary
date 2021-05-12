@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
+
+<DictionaryObjects version="10330" language="none" diagramType="msc">
+<Item id="ITEM1" type="package" name="Trazas graficas" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+</Item>
+<Item id="ITEM10" type="process" name="controlador" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_8"/>
+<SymbolReference symbolId="LIFELINEID_9"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM11" type="process" name="gestorbasededatos" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_10"/>
+<SymbolReference symbolId="LIFELINEID_9"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM12" type="process" name="localizador" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_10"/>
+<SymbolReference symbolId="LIFELINEID_11"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM2" type="process" name="RTDS_Env" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_11"/>
+<SymbolReference symbolId="LIFELINEID_1"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM3" type="process" name="INTERFAZHUMANOCOMPUTADOR" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_2"/>
+<SymbolReference symbolId="LIFELINEID_1"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM4" type="process" name="SERVICIOAGREGARMASCOTA" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_2"/>
+<SymbolReference symbolId="LIFELINEID_3"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM5" type="process" name="SERVICIOAGREGARUSUARIO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_3"/>
+<SymbolReference symbolId="LIFELINEID_4"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM6" type="process" name="SERVICIOELIMINARMASCOTA" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_4"/>
+<SymbolReference symbolId="LIFELINEID_5"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM7" type="process" name="SERVICIOLOCALIZARMASCOTA" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_6"/>
+<SymbolReference symbolId="LIFELINEID_5"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM8" type="process" name="SERVICIOLOGINUSUARIO" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_6"/>
+<SymbolReference symbolId="LIFELINEID_7"/>
+</UsingSymbols>
+</Item>
+<Item id="ITEM9" type="process" name="consultarinfo" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<AlternateType type="system"/>
+<AlternateType type="block"/>
+<UsingSymbols>
+<SymbolReference symbolId="LIFELINEID_8"/>
+<SymbolReference symbolId="LIFELINEID_7"/>
+</UsingSymbols>
+</Item>
+</DictionaryObjects>

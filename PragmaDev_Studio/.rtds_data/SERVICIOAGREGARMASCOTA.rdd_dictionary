@@ -9,17 +9,21 @@
 <SymbolReference symbolId="SYM5" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG2" name="sEstadoTransaccion">
+<Signal id="SIG2" name="sEstadoTransaccionB">
+<UsingSymbols>
+<SymbolReference symbolId="SYM10" usingKind="input"/>
+</UsingSymbols>
+</Signal>
+<Signal id="SIG3" name="sEstadoTransaccion">
 <UsingSymbols>
 <SymbolReference symbolId="SYM11" usingKind="output"/>
-<SymbolReference symbolId="SYM10" usingKind="input"/>
 </UsingSymbols>
 </Signal>
 <Item id="ITEM1" type="process" name="SERVICIOAGREGARMASCOTA" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
 <SignalReference id="SIG1"/>
-<SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG1"/>

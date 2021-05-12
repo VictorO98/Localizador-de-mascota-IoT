@@ -3,19 +3,27 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="10330" language="none" diagramType="blk">
-<Signal id="SIG1" name="sEstadoTransaccion">
+<Signal id="SIG1" name="sRegistrarUsuario">
 </Signal>
-<Signal id="SIG2" name="sRegistrarUsuario">
+<Signal id="SIG10" name="sEliminarMascota">
 </Signal>
-<Signal id="SIG3" name="spos">
+<Signal id="SIG11" name="sEstadoTransaccionD">
 </Signal>
-<Signal id="SIG4" name="sbuscarmascota">
+<Signal id="SIG2" name="sEstadoTransaccionA">
 </Signal>
-<Signal id="SIG5" name="sRegistrarMascota">
+<Signal id="SIG3" name="sEstadoTransaccion">
 </Signal>
-<Signal id="SIG6" name="sValidarUsuario">
+<Signal id="SIG4" name="spos">
 </Signal>
-<Signal id="SIG7" name="sEliminarMascota">
+<Signal id="SIG5" name="sbuscarmascota">
+</Signal>
+<Signal id="SIG6" name="sRegistrarMascota">
+</Signal>
+<Signal id="SIG7" name="sEstadoTransaccionB">
+</Signal>
+<Signal id="SIG8" name="sValidarUsuario">
+</Signal>
+<Signal id="SIG9" name="sEstadoTransaccionC">
 </Signal>
 <Item id="ITEM1" type="block" name="Servicios" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
@@ -27,10 +35,10 @@
 <Connection name="cSCI"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG9"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG6"/>
+<SignalReference id="SIG8"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW18" insideDiagram="TRUE">
@@ -39,10 +47,10 @@
 <Connection name="cSCI"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG4"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW19" insideDiagram="TRUE">
@@ -51,10 +59,10 @@
 <Connection name="cCS"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG5"/>
+<SignalReference id="SIG6"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW16" insideDiagram="TRUE">
@@ -63,10 +71,10 @@
 <Connection name="cCS"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG7"/>
+<SignalReference id="SIG10"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW17" insideDiagram="TRUE">
@@ -75,10 +83,10 @@
 <Connection name="cSCI"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG11"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG7"/>
+<SignalReference id="SIG10"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW14" insideDiagram="TRUE">
@@ -87,10 +95,10 @@
 <Connection name="cSCI"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG7"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG5"/>
+<SignalReference id="SIG6"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW15" insideDiagram="TRUE">
@@ -99,22 +107,22 @@
 <Connection name="cCS"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG6"/>
+<SignalReference id="SIG8"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW12" insideDiagram="TRUE">
-<ConnectorReference linkId="LINK24" isFrom="TRUE"/>
+<ConnectorReference linkId="LINK40" isFrom="TRUE"/>
 <Connections>
-<Connection name="cSCI"/>
+<Connection name="cCS"/>
 </Connections>
 <SentSignals>
 <SignalReference id="SIG1"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW13" insideDiagram="TRUE">
@@ -123,16 +131,16 @@
 <Connection name="cCS"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG4"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW11" insideDiagram="TRUE">
-<ConnectorReference linkId="LINK17" isFrom="TRUE"/>
+<ConnectorReference linkId="LINK39" isFrom="TRUE"/>
 <Connections>
-<Connection name="cCS"/>
+<Connection name="cSCI"/>
 </Connections>
 <SentSignals>
 <SignalReference id="SIG2"/>
@@ -141,8 +149,8 @@
 <SignalReference id="SIG1"/>
 </ReceivedSignals>
 </SignalWindow>
-<Channel name="cCSAU" fromSignalWindow="SIGWDW11" toSignalWindow="SIGWDW1"/>
-<Channel name="cAUSCI" fromSignalWindow="SIGWDW12" toSignalWindow="SIGWDW2"/>
+<Channel name="cAUSCI" fromSignalWindow="SIGWDW11" toSignalWindow="SIGWDW1"/>
+<Channel name="cCSAU" fromSignalWindow="SIGWDW12" toSignalWindow="SIGWDW2"/>
 <Channel name="cCSLM" fromSignalWindow="SIGWDW13" toSignalWindow="SIGWDW3"/>
 <Channel name="cLMSCI" fromSignalWindow="SIGWDW4" toSignalWindow="SIGWDW18"/>
 <Channel name="cAMSCI" fromSignalWindow="SIGWDW14" toSignalWindow="SIGWDW5"/>
@@ -160,7 +168,7 @@
 <SymbolReference symbolId="SYMB2"/>
 </UsingSymbols>
 <SignalWindow id="SIGWDW1" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK17" isFrom="FALSE"/>
+<ConnectorReference linkId="LINK39" isFrom="FALSE"/>
 <SentSignals>
 <SignalReference id="SIG1"/>
 </SentSignals>
@@ -169,9 +177,9 @@
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW2" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK24" isFrom="FALSE"/>
+<ConnectorReference linkId="LINK40" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG2"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG1"/>
@@ -188,19 +196,19 @@
 <SignalWindow id="SIGWDW4" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK37" isFrom="TRUE"/>
 <SentSignals>
-<SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG4"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW3" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK38" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG4"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG4"/>
+<SignalReference id="SIG5"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
@@ -214,19 +222,19 @@
 <SignalWindow id="SIGWDW5" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK26" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG5"/>
+<SignalReference id="SIG6"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG7"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW6" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK28" isFrom="TRUE"/>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG5"/>
+<SignalReference id="SIG6"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
@@ -240,19 +248,19 @@
 <SignalWindow id="SIGWDW7" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK19" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG6"/>
+<SignalReference id="SIG8"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW8" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK29" isFrom="TRUE"/>
 <SentSignals>
-<SignalReference id="SIG6"/>
+<SignalReference id="SIG8"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG9"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
@@ -266,19 +274,19 @@
 <SignalWindow id="SIGWDW9" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK36" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG3"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG7"/>
+<SignalReference id="SIG10"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW10" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK35" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG7"/>
+<SignalReference id="SIG10"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG11"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>

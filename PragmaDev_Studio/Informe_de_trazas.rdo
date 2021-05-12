@@ -2,7 +2,43 @@
 
 <!DOCTYPE Document SYSTEM "rtdsDocument.dtd">
 
-<Document>
-<DocumentSection title="Login Usuario">
+<Document defaultExportFormat="html" defaultExportFile="." defaultExportTemplate="">
+<DocumentSection title="Trazas">
+<DocumentSectionHeaderTextItem name="Login Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">La traza LoginUsuarioCase permite que el cliente pueda autenticarse en la plataforma para poder utilizar cualquier servicio.</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
+<DocumentSectionHeaderTextItem name="Localizar Mascota Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">La traza LocalizarMascotaCase permite al cliente obtener la ubicación de su mascota en tiempo real</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
+<DocumentSectionHeaderTextItem name="Agregar Usuario Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">La traza AgregarUsuarioCase permite que el cliente ingrese su información personal a la plataforma y que pueda acceder en acciones futuras a ella.</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
+<DocumentSectionHeaderTextItem name="Agregar Mascota Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">La traza AgregarMascotaCase permite ingresar los datos de una mascota y asociarla a un cliente o un usuario.</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
+<DocumentSectionHeaderTextItem name="Eliminar Mascota Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">La traza EliminarMascotaCase permite que la información de una mascota que ya no este visible para un usuario, sin embargo, esta información se encuentra en la base de datos y poder ser recuperada en cualquier momento, ya que es un borrado lógico.</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
+<DocumentSectionHeaderTextItem name="UnLoggued Case">
+<StyledText>
+<Paragraph paragraphStyle="body"></Paragraph>
+<Paragraph paragraphStyle="body"><CharacterRange characterStyle="" indexEntries="">la traza UnlogguedCase permite a un usuario cerrar la sesión para que no sé pueda utilizar ningún servicio sin autenticarse nuevamente.</CharacterRange></Paragraph>
+</StyledText>
+</DocumentSectionHeaderTextItem>
 </DocumentSection>
 </Document>

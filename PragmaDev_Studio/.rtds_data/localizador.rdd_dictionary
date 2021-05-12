@@ -3,57 +3,49 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="10330" language="sdl" diagramType="prcs">
-<Signal id="SIG1" name="sbuscarmascota">
+<Signal id="SIG1" name="sPedirdireccion">
 <UsingSymbols>
-<SymbolReference symbolId="SYM6" usingKind="output"/>
 <SymbolReference symbolId="SYM5" usingKind="input"/>
 </UsingSymbols>
 </Signal>
-<Signal id="SIG2" name="sPedirDireccion">
+<Signal id="SIG2" name="spos">
 <UsingSymbols>
-<SymbolReference symbolId="SYM9" usingKind="input"/>
-</UsingSymbols>
-</Signal>
-<Signal id="SIG3" name="spos">
-<UsingSymbols>
-<SymbolReference symbolId="SYM10" usingKind="output"/>
+<SymbolReference symbolId="SYM14" usingKind="output"/>
 </UsingSymbols>
 </Signal>
 <Item id="ITEM1" type="process" name="localizador" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <Body>
 <SentSignals>
-<SignalReference id="SIG1"/>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG2"/>
 </SentSignals>
 <ReceivedSignals>
 <SignalReference id="SIG1"/>
-<SignalReference id="SIG2"/>
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="variable" name="localizatorlong" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="variable" name="m" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="5,0"/>
+<SymbolReference symbolId="SYM3" positions="6,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM11" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="3,0"/>
-</DefiningSymbols>
-</Item>
-<Item id="ITEM12" type="variable" name="localizatorlat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM11" type="variable" name="localizatorlat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
 <SymbolReference symbolId="SYM3" positions="4,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM13" type="variable" name="lat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM12" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="1,0"/>
+<SymbolReference symbolId="SYM3" positions="3,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM14" type="variable" name="m" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM13" type="variable" name="localizatorlong" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="6,0"/>
+<SymbolReference symbolId="SYM3" positions="5,0"/>
+</DefiningSymbols>
+</Item>
+<Item id="ITEM14" type="variable" name="lat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYM3" positions="1,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM15" type="state" name="Idle" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -62,22 +54,13 @@
 </DefiningSymbols>
 <UsingSymbols>
 <SymbolReference symbolId="SYM2"/>
-<SymbolReference symbolId="SYM11"/>
-</UsingSymbols>
-</Item>
-<Item id="ITEM16" type="state" name="LocatingPet" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYM8"/>
-</DefiningSymbols>
-<UsingSymbols>
 <SymbolReference symbolId="SYM7"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM2" type="variable" name="m" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM6"/>
+<SymbolReference symbolId="SYM14"/>
 <SymbolReference symbolId="SYM5"/>
-<SymbolReference symbolId="SYM10"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM3" type="type" name="NATURAL" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -87,31 +70,30 @@
 </Item>
 <Item id="ITEM4" type="variable" name="us" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM6"/>
+<SymbolReference symbolId="SYM14"/>
 <SymbolReference symbolId="SYM5"/>
-<SymbolReference symbolId="SYM10"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM5" type="variable" name="long" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM12"/>
-<SymbolReference symbolId="SYM10"/>
+<SymbolReference symbolId="SYM14"/>
+<SymbolReference symbolId="SYM13"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM6" type="variable" name="localizatorlong" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM12"/>
+<SymbolReference symbolId="SYM13"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM7" type="variable" name="localizatorlat" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM12"/>
+<SymbolReference symbolId="SYM13"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM8" type="variable" name="lat" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
-<SymbolReference symbolId="SYM12"/>
-<SymbolReference symbolId="SYM10"/>
+<SymbolReference symbolId="SYM14"/>
+<SymbolReference symbolId="SYM13"/>
 </UsingSymbols>
 </Item>
 <Item id="ITEM9" type="variable" name="long" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
