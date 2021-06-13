@@ -23,9 +23,9 @@
 </ReceivedSignals>
 </Body>
 </Item>
-<Item id="ITEM10" type="variable" name="m" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM10" type="variable" name="lat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="6,0"/>
+<SymbolReference symbolId="SYM3" positions="1,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM11" type="variable" name="localizatorlat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -33,9 +33,9 @@
 <SymbolReference symbolId="SYM3" positions="4,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM12" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM12" type="variable" name="m" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="3,0"/>
+<SymbolReference symbolId="SYM3" positions="6,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM13" type="variable" name="localizatorlong" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -43,9 +43,9 @@
 <SymbolReference symbolId="SYM3" positions="5,0"/>
 </DefiningSymbols>
 </Item>
-<Item id="ITEM14" type="variable" name="lat" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM14" type="variable" name="us" parentId="ITEM1" scope="none" variableTypeName="NATURAL" variableTypeId="ITEM3" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYM3" positions="1,0"/>
+<SymbolReference symbolId="SYM3" positions="3,0"/>
 </DefiningSymbols>
 </Item>
 <Item id="ITEM15" type="state" name="Idle" parentId="ITEM1" scope="none" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">

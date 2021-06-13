@@ -3,20 +3,22 @@
 <!DOCTYPE DictionaryObjects SYSTEM "rtdsDictionaryObjects.dtd">
 
 <DictionaryObjects version="10330" language="none" diagramType="sys">
-<Signal id="SIG1" name="sEstadoTransaccionA">
+<Signal id="SIG1" name="sValidarUsuario">
+<SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
+<SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="3,7"/>
+<SymbolReference symbolId="SYMB37" positions="1,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG10" name="sRegistrarMascota">
+<Signal id="SIG10" name="sEsmascota">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="8,7"/>
+<SymbolReference symbolId="SYMB37" positions="11,7"/>
 </DefiningSymbols>
 </Signal>
 <Signal id="SIG11" name="sEstadoTransaccionB">
@@ -26,14 +28,7 @@
 <SymbolReference symbolId="SYMB37" positions="4,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG12" name="sRegistrarUsuario">
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="9,7"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG13" name="sEliminarMascota">
+<Signal id="SIG12" name="sEliminarMascota">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
@@ -42,32 +37,14 @@
 <SymbolReference symbolId="SYMB37" positions="7,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG14" name="sEstadoTransaccionD">
+<Signal id="SIG13" name="sEstadoTransaccionD">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB37" positions="6,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG15" name="sEsmascota">
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="11,7"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG2" name="sValidarUsuario">
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="1,7"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG3" name="sActualizarInfo">
+<Signal id="SIG14" name="sActualizarInfo">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
@@ -76,23 +53,14 @@
 <SymbolReference symbolId="SYMB37" positions="14,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG4" name="sPedirdireccion">
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<SignalParameterTypeId typeItemId="ITEM2"/>
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="12,7"/>
-</DefiningSymbols>
-</Signal>
-<Signal id="SIG5" name="sEstadoTransaccionC">
+<Signal id="SIG15" name="sEstadoTransaccionA">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="5,7"/>
+<SymbolReference symbolId="SYMB37" positions="3,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG6" name="sbuscarmascota">
+<Signal id="SIG2" name="sbuscarmascota">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
@@ -101,7 +69,23 @@
 <SymbolReference symbolId="SYMB37" positions="10,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG7" name="spos">
+<Signal id="SIG3" name="sLogin">
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB37" positions="0,7"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG4" name="sEstadoTransaccionC">
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB37" positions="5,7"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG5" name="spos">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterType>NATURAL</SignalParameterType>
@@ -114,20 +98,36 @@
 <SymbolReference symbolId="SYMB37" positions="13,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG8" name="sLogin">
+<Signal id="SIG6" name="sRegistrarUsuario">
 <SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterType>NATURAL</SignalParameterType>
-<SignalParameterTypeId typeItemId="ITEM2"/>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB37" positions="0,7"/>
+<SymbolReference symbolId="SYMB37" positions="9,7"/>
 </DefiningSymbols>
 </Signal>
-<Signal id="SIG9" name="sEstadoTransaccion">
+<Signal id="SIG7" name="sEstadoTransaccion">
 <SignalParameterType>NATURAL</SignalParameterType>
 <SignalParameterTypeId typeItemId="ITEM2"/>
 <DefiningSymbols>
 <SymbolReference symbolId="SYMB37" positions="2,7"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG8" name="sPedirdireccion">
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB37" positions="12,7"/>
+</DefiningSymbols>
+</Signal>
+<Signal id="SIG9" name="sRegistrarMascota">
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterType>NATURAL</SignalParameterType>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<SignalParameterTypeId typeItemId="ITEM2"/>
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB37" positions="8,7"/>
 </DefiningSymbols>
 </Signal>
 <Item id="ITEM1" type="system" name="Sys" scope="current" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
@@ -140,20 +140,20 @@
 <Connection name="cUsHCI"/>
 </Connections>
 <SentSignals>
-<SignalReference id="SIG8"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG6"/>
 <SignalReference id="SIG3"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
 </SentSignals>
 </SignalWindow>
-<Channel name="cSCI" fromSignalWindow="SIGWDW1" toSignalWindow="SIGWDW5"/>
-<Channel name="cCS" fromSignalWindow="SIGWDW8" toSignalWindow="SIGWDW2"/>
-<Channel name="cCIDB" fromSignalWindow="SIGWDW3" toSignalWindow="SIGWDW9"/>
-<Channel name="cCIL" fromSignalWindow="SIGWDW4" toSignalWindow="SIGWDW6"/>
-<Channel name="cHCIC" fromSignalWindow="SIGWDW11" toSignalWindow="SIGWDW7"/>
-<Channel name="cUsHCI" fromSignalWindow="SIGWDW12" toSignalWindow="SIGWDW10"/>
+<Channel name="cSCI" fromSignalWindow="SIGWDW1" toSignalWindow="SIGWDW7"/>
+<Channel name="cCS" fromSignalWindow="SIGWDW10" toSignalWindow="SIGWDW2"/>
+<Channel name="cUsHCI" fromSignalWindow="SIGWDW12" toSignalWindow="SIGWDW3"/>
+<Channel name="cHCIC" fromSignalWindow="SIGWDW4" toSignalWindow="SIGWDW9"/>
+<Channel name="cCIDB" fromSignalWindow="SIGWDW5" toSignalWindow="SIGWDW11"/>
+<Channel name="cCIL" fromSignalWindow="SIGWDW6" toSignalWindow="SIGWDW8"/>
 </Item>
 <Item id="ITEM2" type="type" name="NATURAL" scope="global" defined="FALSE" anchorItemId="ITEM1" searchPolicy="-1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <UsingSymbols>
@@ -170,194 +170,194 @@
 <SignalWindow id="SIGWDW1" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK284" isFrom="TRUE"/>
 <SentSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
+<SignalReference id="SIG1"/>
 <SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
 <SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG1"/>
+<SignalReference id="SIG15"/>
 <SignalReference id="SIG11"/>
+<SignalReference id="SIG4"/>
+<SignalReference id="SIG13"/>
 <SignalReference id="SIG5"/>
-<SignalReference id="SIG14"/>
-<SignalReference id="SIG7"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW2" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK283" isFrom="FALSE"/>
 <SentSignals>
-<SignalReference id="SIG9"/>
 <SignalReference id="SIG7"/>
+<SignalReference id="SIG5"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
+<SignalReference id="SIG1"/>
 <SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
 <SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
-<Item id="ITEM4" type="process" name="consultarinfo" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<Item id="ITEM4" type="process" name="INTERFAZHUMANOCOMPUTADOR" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
 <DefiningSymbols>
-<SymbolReference symbolId="SYMB10"/>
+<SymbolReference symbolId="SYMB2"/>
 </DefiningSymbols>
 <UsingSymbols>
-<SymbolReference symbolId="SYMB10"/>
+<SymbolReference symbolId="SYMB2"/>
 </UsingSymbols>
 <SignalWindow id="SIGWDW4" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK261" isFrom="TRUE"/>
-<SentSignals>
-<SignalReference id="SIG4"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG7"/>
-</ReceivedSignals>
-</SignalWindow>
-<SignalWindow id="SIGWDW5" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK284" isFrom="FALSE"/>
+<ConnectorReference linkId="LINK236" isFrom="TRUE"/>
 <SentSignals>
 <SignalReference id="SIG1"/>
-<SignalReference id="SIG11"/>
-<SignalReference id="SIG5"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
 <SignalReference id="SIG14"/>
-<SignalReference id="SIG7"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG7"/>
+<SignalReference id="SIG5"/>
 </ReceivedSignals>
 </SignalWindow>
 <SignalWindow id="SIGWDW3" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK260" isFrom="TRUE"/>
-<SentSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG3"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG9"/>
-</ReceivedSignals>
-</SignalWindow>
-</Item>
-<Item id="ITEM5" type="process" name="localizador" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB12"/>
-</DefiningSymbols>
-<UsingSymbols>
-<SymbolReference symbolId="SYMB12"/>
-</UsingSymbols>
-<SignalWindow id="SIGWDW6" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK261" isFrom="FALSE"/>
-<SentSignals>
-<SignalReference id="SIG7"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG4"/>
-</ReceivedSignals>
-</SignalWindow>
-</Item>
-<Item id="ITEM6" type="process" name="controlador" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB8"/>
-</DefiningSymbols>
-<UsingSymbols>
-<SymbolReference symbolId="SYMB8"/>
-</UsingSymbols>
-<SignalWindow id="SIGWDW7" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK236" isFrom="FALSE"/>
-<SentSignals>
-<SignalReference id="SIG9"/>
-<SignalReference id="SIG7"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
-</ReceivedSignals>
-</SignalWindow>
-<SignalWindow id="SIGWDW8" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK283" isFrom="TRUE"/>
-<SentSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG9"/>
-<SignalReference id="SIG7"/>
-</ReceivedSignals>
-</SignalWindow>
-</Item>
-<Item id="ITEM7" type="process" name="gestorbasededatos" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB11"/>
-</DefiningSymbols>
-<UsingSymbols>
-<SymbolReference symbolId="SYMB11"/>
-</UsingSymbols>
-<SignalWindow id="SIGWDW9" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK260" isFrom="FALSE"/>
-<SentSignals>
-<SignalReference id="SIG9"/>
-</SentSignals>
-<ReceivedSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG15"/>
-<SignalReference id="SIG3"/>
-</ReceivedSignals>
-</SignalWindow>
-</Item>
-<Item id="ITEM8" type="process" name="INTERFAZHUMANOCOMPUTADOR" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
-<DefiningSymbols>
-<SymbolReference symbolId="SYMB2"/>
-</DefiningSymbols>
-<UsingSymbols>
-<SymbolReference symbolId="SYMB2"/>
-</UsingSymbols>
-<SignalWindow id="SIGWDW10" insideDiagram="FALSE">
 <ConnectorReference linkId="LINK167" isFrom="FALSE"/>
 <ReceivedSignals>
-<SignalReference id="SIG8"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
-<SignalReference id="SIG12"/>
-<SignalReference id="SIG6"/>
 <SignalReference id="SIG3"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
 </ReceivedSignals>
 </SignalWindow>
-<SignalWindow id="SIGWDW11" insideDiagram="FALSE">
-<ConnectorReference linkId="LINK236" isFrom="TRUE"/>
+</Item>
+<Item id="ITEM5" type="process" name="consultarinfo" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB10"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB10"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW5" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK260" isFrom="TRUE"/>
 <SentSignals>
-<SignalReference id="SIG2"/>
-<SignalReference id="SIG13"/>
-<SignalReference id="SIG10"/>
+<SignalReference id="SIG1"/>
 <SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
 <SignalReference id="SIG6"/>
-<SignalReference id="SIG3"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG14"/>
 </SentSignals>
 <ReceivedSignals>
-<SignalReference id="SIG9"/>
 <SignalReference id="SIG7"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW6" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK261" isFrom="TRUE"/>
+<SentSignals>
+<SignalReference id="SIG8"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG5"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW7" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK284" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG15"/>
+<SignalReference id="SIG11"/>
+<SignalReference id="SIG4"/>
+<SignalReference id="SIG13"/>
+<SignalReference id="SIG5"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
+</ReceivedSignals>
+</SignalWindow>
+</Item>
+<Item id="ITEM6" type="process" name="localizador" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB12"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB12"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW8" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK261" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG5"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG8"/>
+</ReceivedSignals>
+</SignalWindow>
+</Item>
+<Item id="ITEM7" type="process" name="controlador" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB8"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB8"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW9" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK236" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG7"/>
+<SignalReference id="SIG5"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
+</ReceivedSignals>
+</SignalWindow>
+<SignalWindow id="SIGWDW10" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK283" isFrom="TRUE"/>
+<SentSignals>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG2"/>
+<SignalReference id="SIG14"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG7"/>
+<SignalReference id="SIG5"/>
+</ReceivedSignals>
+</SignalWindow>
+</Item>
+<Item id="ITEM8" type="process" name="gestorbasededatos" parentId="ITEM1" scope="none" minInstances="1" formalParameterOrder="-" isFormalParam="FALSE" isSyntype="FALSE">
+<DefiningSymbols>
+<SymbolReference symbolId="SYMB11"/>
+</DefiningSymbols>
+<UsingSymbols>
+<SymbolReference symbolId="SYMB11"/>
+</UsingSymbols>
+<SignalWindow id="SIGWDW11" insideDiagram="FALSE">
+<ConnectorReference linkId="LINK260" isFrom="FALSE"/>
+<SentSignals>
+<SignalReference id="SIG7"/>
+</SentSignals>
+<ReceivedSignals>
+<SignalReference id="SIG1"/>
+<SignalReference id="SIG12"/>
+<SignalReference id="SIG9"/>
+<SignalReference id="SIG6"/>
+<SignalReference id="SIG10"/>
+<SignalReference id="SIG14"/>
 </ReceivedSignals>
 </SignalWindow>
 </Item>
