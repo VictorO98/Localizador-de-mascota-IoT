@@ -116,3 +116,18 @@ typedef enum
     sBuscarMascota,
     sActualizarInfo 
 } TO_GestorBD_From_ConsultarInfo;                                      /* Signals sent to process Gestor BD from Consultar info */
+ 
+/***( EFSM states )************************************************************/
+
+typedef enum
+{
+    Wait,
+    Unlogged,
+    Logged,
+    Registering,
+    Updating,
+    DeletingPet,
+    RegisteringPet,
+    LocatingPet,
+    Searching,
+} InterfazHumano_States;
