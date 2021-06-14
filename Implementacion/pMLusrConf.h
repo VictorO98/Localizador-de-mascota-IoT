@@ -21,7 +21,10 @@
 typedef struct
 {
   int   signal;
-  int   value;
+  int   valueA;
+  int   valueB;
+  int   valueC;
+  int   valueD;
 } msg_t;
 
 /***( signals )****************************************************************/
@@ -130,4 +133,4 @@ typedef enum
     RegisteringPet,
     LocatingPet,
     Searching,
-} InterfazHumano_States;
+} InterfazHumano_States; 
