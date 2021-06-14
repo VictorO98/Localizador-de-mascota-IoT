@@ -133,4 +133,21 @@ typedef enum
     RegisteringPet,
     LocatingPet,
     Searching,
-} InterfazHumano_States; 
+} InterfazHumano_States;
+
+typedef enum {
+	Idle,Wait
+} AGREGARUSUARIO_States;
+typedef enum {
+	Idle,Wait
+} AGREGARMASCOTA_States;
+typedef enum {
+	Idle,Wait
+} LOGINUSUARIO_States;
+
+typedef enum {
+	Idle,Wait
+} LOCALIZARMASCOTA_States;
+typedef enum {
+	Idle,Wait
+} ELIMINARMASCOTA_States;
