@@ -8,13 +8,17 @@
 *******************************************************************************/
 
 #define     BUFSIZE     8     /* number of slots in queues */
-#define     NUM_QUEUES  6     /* number of queues */
+#define     NUM_QUEUES  10    /* number of queues */
 #define     INTERFAZHC_Q      /* queue 0: Interfaz humano computador process */
 #define     CONTROLADOR_Q     /* queue 1: Controlador process */
-#define     SERVICIOS_Q       /* queue 2: Servicios process */
-#define     CONSULTARI_Q      /* queue 3: Consultar info process */
-#define     LOCALIZADOR_Q     /* queue 4: Localizador process */
-#define     GESTORBD_Q        /* queue 5: Gestor process */
+#define     AGREGARUSU_Q      /* queue 2: Servicio Agregar Usuario process */
+#define     AGREGARMAS_Q      /* queue 3: Servicio Agregar Mascota process */
+#define     LOGIN_Q           /* queue 4: Servicio Login process */
+#define     LOCALIZAR_Q       /* queue 5: Servicio localizar process */
+#define     ELIMINARMAS_Q     /* queue 6: Servicio eliminar mascota process */
+#define     CONSULTARI_Q      /* queue 7: Consultar info process */
+#define     LOCALIZADOR_Q     /* queue 8: Localizador process */
+#define     GESTORBD_Q        /* queue 9: Gestor process */
 
 /***( message structure )******************************************************/
 
@@ -134,6 +138,26 @@ typedef enum
     LocatingPet,
     Searching,
 } InterfazHumano_States;
+
+typedef enum
+{
+    DeletingPet,
+    Idle,
+    LocatingPet,
+    Login,
+    Registering,
+    RegisteringPet
+} Controlador_State; 
+
+typedef enum
+{
+    DeletingPet,
+    Idle,
+    LocatingPet,
+    Wait,
+    Registering,
+    RegisteringPet
+} Consultar_Info_State;
 
 typedef enum {
 	Idle,Wait

@@ -79,10 +79,9 @@ static void *pInterfazHumanoComputador ( void *arg)
   dtoMascota = 0;
   lat = 0;
   lon = 0;
-  LOC_req = 1;
   state_next = Unlogged;
 
-  for ( ; LOC_req < 8 ; )
+  for ( ; ; )
   {
     state = state_next
     InMsg = receiveMessage ( &(queue [INTERFAZHC_Q]) );
@@ -97,7 +96,7 @@ static void *pInterfazHumanoComputador ( void *arg)
             us = InMsg.valueA;
             pd = InMsg.valueB;
 
-            OutMsg.signal = sValidarUsuario;
+            OutMsg.signal = (int) sValidarUsuario;
             OutMsg.valueA = us;
             OutMsg.valueB = pd;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
@@ -108,7 +107,7 @@ static void *pInterfazHumanoComputador ( void *arg)
           case sRegistrarUsuario:
             dtoUs = InMsg.valueA;
 
-            OutMsg.signal = sRegistrarUsuario;
+            OutMsg.signal = (int) sRegistrarUsuario;
             OutMsg.valueA = dtoUs;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
             fflush ( stdout );
@@ -157,7 +156,7 @@ static void *pInterfazHumanoComputador ( void *arg)
             us = InMsg.valueA;
             mID = InMsg.valueB;
 
-            OutMsg.signal = sActualizarInfo;
+            OutMsg.signal = (int) sActualizarInfo;
             OutMsg.valueA = us;
             OutMsg.valueB = mID;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
@@ -169,7 +168,7 @@ static void *pInterfazHumanoComputador ( void *arg)
             us = InMsg.valueA;
             mID = InMsg.valueB;
 
-            OutMsg.signal = sEliminarMascota;
+            OutMsg.signal = (int) sEliminarMascota;
             OutMsg.valueA = us;
             OutMsg.valueB = mID;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
@@ -181,7 +180,7 @@ static void *pInterfazHumanoComputador ( void *arg)
             us = InMsg.valueA;
             dtoMascota = InMsg.valueB;
 
-            OutMsg.signal = sRegistrarMascota;
+            OutMsg.signal = (int) sRegistrarMascota;
             OutMsg.valueA = us;
             OutMsg.valueB = mID;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
@@ -193,7 +192,7 @@ static void *pInterfazHumanoComputador ( void *arg)
             us = InMsg.valueA;
             mID = InMsg.valueB;
 
-            OutMsg.signal = sBuscarMascota;
+            OutMsg.signal = (int) sBuscarMascota;
             OutMsg.valueA = us;
             OutMsg.valueB = mID;
             printf ( "packet %d to controlador\n",  OutMsg.signal );
@@ -278,15 +277,220 @@ static void *pInterfazHumanoComputador ( void *arg)
   return ( NULL );
 }
 
-static void *SERVICIOAGREGARUSUARIO ( void *arg ){
+static void *pControlador (void *arg)
+{
+  Controlador_State   state, state_next;
+  msg_t               InMsg, OutMsg;
+
+  unsigned int s, us, mID, dtoMascota, dtoUs, pd, m, lat, lon, estado;
+
+  printf ( "Controlador started...\n" );
+  state_next = Idle;
+  s = 0;
+  us = 0;
+  mID = 0;
+  dtoMascota = 0;
+  dtoUs = 0;
+  pd = 0;
+  m = 0;
+  lat = 0;
+  lon = 0;
+  estado = 0;
+
+  for ( ; ; )
+  {
+	state = state_next
+    InMsg = receiveMessage ( &(queue [CONTROLADOR_Q]) );
+    printf ( "Controlador received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    fflush ( stdout );
+	switch ( state )
+	{
+		case DeletingPet:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					s = InMsg.valueA;
+
+					OutMsg.signal = (int) sEstadoTransaccion;
+					OutMsg.valueA = s;
+					printf ( "packet %d to Interfaz humano computador\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); /* send message to Interfaz humano computadorprocess */
+					
+					state_next = Idle;
+				default:
+					break;
+			}
+
+		case Idle:
+			switch (InMsg.signal)
+			{
+				case sEliminarMascota:
+					us = InMsg.valueA;
+					mID = InMsg.valueB;
+
+					OutMsg.signal = (int) sEliminarMascota;
+					OutMsg.valueA = us;
+					OutMsg.valueB = mID;
+					printf ( "packet %d to Eliminar mascota service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [ELIMINARMAS_Q]), OutMsg ); /* send message to Eliminar mascota service process */
+
+					state_next = DeletingPet;
+				
+				case sRegistrarMascota:
+					us = InMsg.valueA;
+					dtoMascota = InMsg.valueB;
+
+					OutMsg.signal = (int) sRegistrarMascota;
+					OutMsg.valueA = us;
+					OutMsg.valueB = dtoMascota;
+					printf ( "packet %d to Registrar mascota service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [AGREGARMAS_Q]), OutMsg ); /* send message to Agregar mascota service process */
+
+					state_next = RegisteringPet;
+
+				case sRegistrarUsuario:
+					dtoUs = InMsg.valueA;
+					
+					OutMsg.signal = (int) sRegistrarUsuario;
+					OutMsg.valueA = dtoUs;
+					printf ( "packet %d to Registrar usuario service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [AGREGARUSU_Q]), OutMsg ); /* send message to Agregar usuario service process */
+
+					state_next = Registering;
+
+				case sValidarUsuario:
+					us = InMsg.valueA;
+					pd = InMsg.valueB;
+
+					OutMsg.signal = (int) sValidarUsuario;
+					OutMsg.valueA = us;
+					OutMsg.valueB = pd;
+					printf ( "packet %d to Validar usuario service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [LOGIN_Q]), OutMsg ); /* send message to Login service process */
+
+					state_next = Login;
+
+				case sBuscarMascota:
+					us = InMsg.valueA;
+					m = InMsg.valueB;
+
+					OutMsg.signal = (int) sBuscarMascota;
+					OutMsg.valueA = us;
+					OutMsg.valueB = m;
+					printf ( "packet %d to Buscar Mascota service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [LOCALIZAR_Q]), OutMsg ); /* send message to Buscar mascota service process */
+
+					state_next = LocatingPet;
+				default:
+					break;
+			}
+		
+		case LocatingPet:
+			switch (InMsg.signal)
+			{
+				case sPos:
+					lat = InMsg.valueA;
+					lon = InMsg.valueB;
+					us = InMsg.valueC;
+					mID = InMsg.valueD;
+
+					OutMsg.signal = (int) sPos
+					OutMsg.valueA = lat;
+					OutMsg.valueB = lon;
+					OutMsg.valueC = us;
+					OutMsg.valueD = mID;
+					printf ( "packet %d to Interfaz humando computador\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); /* send message to Interfaz humano computador process */
+
+					state_next = Idle;
+				default:
+					break;
+			}
+
+		case Login:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					s = InMsg.valueA;
+
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = s;
+					printf ( "packet %d to Interfaz humando computador\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); /* send message to Interfaz humano computador process */
+
+					state_next = Idle;
+				default: 
+					break;
+			}
+
+		case Registering:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					estado = InMsg.valueA;
+
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = estado;
+					printf ( "packet %d to Interfaz humando computador\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); /* send message to Interfaz humano computador process */
+
+					state_next = Idle;
+				default: 
+					break;
+			}
+
+		case RegisteringPet:
+			switch (InMsg.signal)
+			{
+				case EstadoTransaccion:
+					s = InMsg.valueA;
+
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = s;
+					printf ( "packet %d to Interfaz humando computador\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); /* send message to Interfaz humano computador process */
+
+					state_next = Idle;
+				default: 
+					break;
+			}	
+
+		
+		break;
+	}
+	printf ( "Controlador next state is %d\n", state_next );
+    fflush ( stdout );
+  }
+  printf ( "Controlador exiting...\n" );
+  fflush ( stdout );
+
+  return ( NULL );
+}
+
+static void *SERVICIOAGREGARUSUARIO ( void *arg )
+{
 	AGREGARUSUARIO_States state,
                         state_next;
     msg_t                 InMsg,
                         OutMsg;
+
+	printf ( "Servicio agregar usuario started...\n" );
     state_next =Idle;
     for ( ; ; ){
     	state = state_next;
-    	InMsg = receiveMessage ( &(queue [CONTROLLER_Q]) );
+    	InMsg = receiveMessage ( &(queue [AGREGARUSU_Q]) );
+		printf ( "Servicio agregar usuario received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    	fflush ( stdout );
   		switch ( state )
     	{
     		case Idle:
@@ -294,8 +498,10 @@ static void *SERVICIOAGREGARUSUARIO ( void *arg ){
     			{
     				case sRegistrarUsuario:
     					OutMsg.signal = (int) sRegistrarUsuario;
-            			OutMsg.value = InMsg.value;
-    					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Consultar info\n",  OutMsg.signal );
+						fflush ( stdout );
+    					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );						
     					state_next=Wait;
     					break;
     				default:
@@ -307,7 +513,9 @@ static void *SERVICIOAGREGARUSUARIO ( void *arg ){
     			{
     				case sEstadoTransaccionA:
     					OutMsg.signal = (int) sEstadoTransaccion;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Controlador info\n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONTROLADOR_Q ]), OutMsg );
     					state_next=Idle;
     					break;
@@ -317,20 +525,29 @@ static void *SERVICIOAGREGARUSUARIO ( void *arg ){
 				break;
     				
     	}
+		printf ( "Servicio Agregar Usuario next state is %d\n", state_next );
+    	fflush ( stdout );
 	}
-	  return ( NULL );
+	printf ( "Servicio Agregar Usuario exiting...\n" );
+  	fflush ( stdout );
+	return ( NULL );
 }
 
-static void *SERVICIOAGREGARMASCOTA ( void *arg ){
+static void *SERVICIOAGREGARMASCOTA ( void *arg )
+{
 	
 	AGREGARMASCOTA_States state,
                         state_next;
     msg_t                 InMsg,
                         OutMsg;
+	
+	printf ( "Servicio agregar mascota started...\n" );
     state_next =Idle;
     for ( ; ; ){
     	state = state_next;
-    	InMsg = receiveMessage ( &(queue [CONTROLLER_Q]) );
+    	InMsg = receiveMessage ( &(queue [AGREGARMAS_Q]) );
+		printf ( "Servicio agregar mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    	fflush ( stdout );
   		switch ( state )
     	{
     		case Idle:
@@ -338,7 +555,9 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg ){
     			{
     				case sRegistrarUsuario:
     					OutMsg.signal = (int) sRegistrarMascota;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Consultar info \n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
     					state_next=Wait;
     					break;
@@ -351,7 +570,9 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg ){
     			{
     				case sEstadoTransaccionB:
     					OutMsg.signal = (int) sEstadoTransaccion;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Controlador info\n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONTROLADOR_Q ]), OutMsg );
     					state_next=Idle;
     					break;
@@ -361,11 +582,16 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg ){
 				break;
     				
     	}
+		printf ( "Servicio Agregar Mascota next state is %d\n", state_next );
+    	fflush ( stdout );
 	}
-	  return ( NULL );
+	printf ( "Servicio Agregar Mascota exiting...\n" );
+  	fflush ( stdout );
+	return ( NULL );
 }
 
-static void *SERVICIOLOGINUSUARIO ( void *arg ){
+static void *SERVICIOLOGINUSUARIO ( void *arg )
+{
 	
 	
 	
@@ -373,10 +599,13 @@ static void *SERVICIOLOGINUSUARIO ( void *arg ){
                         state_next;
     msg_t                 InMsg,
                         OutMsg;
+	printf ( "Servicio Login Usuario started...\n" );
     state_next =Idle;
     for ( ; ; ){
     	state = state_next;
-    	InMsg = receiveMessage ( &(queue [CONTROLLER_Q]) );
+    	InMsg = receiveMessage ( &(queue [LOGIN_Q]) );
+		printf ( "Servicio Login usuario received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    	fflush ( stdout );
   		switch ( state )
     	{
     		case Idle:
@@ -384,7 +613,9 @@ static void *SERVICIOLOGINUSUARIO ( void *arg ){
     			{
     				case sValidarUsuario:
     					OutMsg.signal = (int) sRegistrarMascota;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Consultar info \n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
     					state_next=Wait;
     					break;
@@ -397,7 +628,9 @@ static void *SERVICIOLOGINUSUARIO ( void *arg ){
     			{
     				case sEstadoTransaccion:
     					OutMsg.signal = (int) sEstadoTransaccion;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Controlador \n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONTROLADOR_Q ]), OutMsg );
     					state_next=Idle;
     					break;
@@ -407,11 +640,16 @@ static void *SERVICIOLOGINUSUARIO ( void *arg ){
 				break;
     				
     	}
+		printf ( "Servicio Login Usuario next state is %d\n", state_next );
+    	fflush ( stdout );
 	}
-	  return ( NULL );
+	printf ( "Servicio Login Usuario exiting...\n" );
+  	fflush ( stdout );
+	return ( NULL );
 }
 
-static void *SERVICIOLOCALIZARMASCOTA ( void *arg ){
+static void *SERVICIOLOCALIZARMASCOTA ( void *arg )
+{
 	
 	
 	
@@ -419,10 +657,14 @@ static void *SERVICIOLOCALIZARMASCOTA ( void *arg ){
                         state_next;
     msg_t                 InMsg,
                         OutMsg;
+	printf ( "Servicio Localizar Mascota started...\n" );
     state_next =Idle;
+	
     for ( ; ; ){
     	state = state_next;
-    	InMsg = receiveMessage ( &(queue [CONSULTARI_Q]) );
+    	InMsg = receiveMessage ( &(queue [LOCALIZAR_Q]) );
+		printf ( "Servicio Localizar mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    	fflush ( stdout );
   		switch ( state )
     	{
     		case Idle:
@@ -430,7 +672,9 @@ static void *SERVICIOLOCALIZARMASCOTA ( void *arg ){
     			{
     				case sbuscarmascota:
     					OutMsg.signal = (int) sbuscarmascota;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Consultar info \n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
     					state_next=Wait;
     					break;
@@ -443,7 +687,9 @@ static void *SERVICIOLOCALIZARMASCOTA ( void *arg ){
     			{
     				case sPos:
     					OutMsg.signal = (int) sPos;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Controlador\n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONTROLADOR_Q ]), OutMsg );
     					state_next=Idle;
     					break;
@@ -453,11 +699,16 @@ static void *SERVICIOLOCALIZARMASCOTA ( void *arg ){
 				break;
     				
     	}
+		printf ( "Servicio Localizar mascota next state is %d\n", state_next );
+    	fflush ( stdout );
 	}
-	  return ( NULL );
+	printf ( "Servicio Localizar mascota exiting...\n" );
+  	fflush ( stdout );
+	return ( NULL );
 }
 
-static void *SERVICIOELIMINARMASCOTA ( void *arg ){
+static void *SERVICIOELIMINARMASCOTA ( void *arg )
+{
 	
 	
 	
@@ -465,10 +716,14 @@ static void *SERVICIOELIMINARMASCOTA ( void *arg ){
                         state_next;
     msg_t                 InMsg,
                         OutMsg;
+
+	printf ( "Servicio Eliminar Mascota started...\n" );
     state_next =Idle;
     for ( ; ; ){
     	state = state_next;
-    	InMsg = receiveMessage ( &(queue [CONSULTARI_Q]) );
+    	InMsg = receiveMessage ( &(queue [ELIMINARMAS_Q]) );
+		printf ( "Servicio Eliminar mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    	fflush ( stdout );
   		switch ( state )
     	{
     		case Idle:
@@ -476,7 +731,9 @@ static void *SERVICIOELIMINARMASCOTA ( void *arg ){
     			{
     				case sEliminarMascota:
     					OutMsg.signal = (int) sEliminarMascota;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Consultar info\n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
     					state_next=Wait;
     					break;
@@ -489,7 +746,9 @@ static void *SERVICIOELIMINARMASCOTA ( void *arg ){
     			{
     				case sEstadoTransaccionD:
     					OutMsg.signal = (int) sEstadoTransaccion;
-            			OutMsg.value = InMsg.value;
+            			OutMsg.valueA = InMsg.valueA;
+						printf ( "packet %d to Controlador\n",  OutMsg.signal );
+						fflush ( stdout );
     					sendMessage ( &(queue [CONTROLADOR_Q ]), OutMsg );
     					state_next=Idle;
     					break;
@@ -499,8 +758,161 @@ static void *SERVICIOELIMINARMASCOTA ( void *arg ){
 				break;
     				
     	}
+		printf ( "Servicio Eliminar Mascota next state is %d\n", state_next );
+    	fflush ( stdout );
 	}
-	  return ( NULL );
+	printf ( "Servicio Localizar mascota exiting...\n" );
+  	fflush ( stdout );
+	return ( NULL );
 }
 
+static void *pConsultarInfo (void *arg)
+{
+	Consultar_Info_State   state, state_next;
+  msg_t               InMsg, OutMsg;
 
+  printf ( "Consultar Info started...\n" );
+  state_next = Idle;
+
+  for ( ; ; )
+  {
+	state = state_next
+    InMsg = receiveMessage ( &(queue [CONSULTARI_Q]) );
+    printf ( "Consultar info received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+    fflush ( stdout );
+	switch ( state )
+	{
+		case DeletingPet:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					OutMsg.signal = (int) sEstadoTransaccion;
+					OutMsg.valueA = InMsg.valueA;
+					printf ( "packet %d to Servicio Eliminar mascota\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [ELIMINARMAS_Q]), OutMsg ); 
+					state_next = Idle;
+				default:
+					break;
+			}
+
+		case Idle:
+			switch (InMsg.signal)
+			{
+				case sEliminarMascota:
+					OutMsg.signal = (int) sEliminarMascota;
+					OutMsg.valueA = InMsg.valueA;
+					OutMsg.valueB = InMsg.valueB;
+					printf ( "packet %d to Gestor BD\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [GESTORBD_Q]), OutMsg ); 
+					state_next = DeletingPet;
+				
+				case sRegistrarMascota:
+					OutMsg.signal = (int) sRegistrarMascota;
+					OutMsg.valueA = InMsg.valueA;
+					OutMsg.valueB = InMsg.valueB;
+					printf ( "packet %d to Gestor BD\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [GESTORBD_Q]), OutMsg );
+					state_next = RegisteringPet;
+
+				case sRegistrarUsuario:
+					OutMsg.signal = (int) sRegistrarUsuario;
+					OutMsg.valueA = InMsg.valueA;
+					printf ( "packet %d to Gestor BD\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [GESTORBD_Q]), OutMsg ); 
+					state_next = Registering;
+
+				case sValidarUsuario:
+					OutMsg.signal = (int) sValidarUsuario;
+					OutMsg.valueA = InMsg.valueA;
+					OutMsg.valueB = InMsg.valueB;
+					printf ( "packet %d to Gestor BD\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [GESTORBD_Q]), OutMsg );
+					state_next = Wait;
+
+				case sBuscarMascota:
+					OutMsg.signal = (int) sBuscarMascota;
+					OutMsg.valueA = InMsg.valueA;
+					OutMsg.valueB = InMsg.valueB;
+					printf ( "packet %d to Gestor BD\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [GESTORBD_Q]), OutMsg ); 
+					state_next = LocatingPet;
+				default:
+					break;
+			}
+		
+		case LocatingPet:
+			switch (InMsg.signal)
+			{
+				case sPos:
+					OutMsg.signal = (int) sPos
+					OutMsg.valueA = InMsg.valueA;
+					OutMsg.valueB =  InMsg.valueB;
+					OutMsg.valueC = InMsg.valueC;
+					OutMsg.valueD = InMsg.valueD;
+					printf ( "packet %d to Servicio localizar mascota Service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [LOCALIZAR_Q]), OutMsg ); 
+					state_next = Idle;
+				default:
+					break;
+			}
+
+		case Wait:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = InMsg.valueA;
+					printf ( "packet %d to Servicio Login Service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [LOGIN_Q]), OutMsg ); 
+					state_next = Idle;
+				default: 
+					break;
+			}
+
+		case Registering:
+			switch (InMsg.signal)
+			{
+				case sEstadoTransaccion:
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = InMsg.valueA;
+					printf ( "packet %d to Registro Usuario Service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [AGREGARUSU_Q]), OutMsg ); 
+					state_next = Idle;
+				default: 
+					break;
+			}
+
+		case RegisteringPet:
+			switch (InMsg.signal)
+			{
+				case EstadoTransaccion:
+					OutMsg.signal = (int) sEstadoTransaccion
+					OutMsg.valueA = InMsg.valueA;
+					printf ( "packet %d to Registro Mascota Service\n",  OutMsg.signal );
+					fflush ( stdout );
+					sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); 
+					state_next = Idle;
+				default: 
+					break;
+			}	
+
+		
+		break;
+	}
+	printf ( "Consultar Infor next state is %d\n", state_next );
+    fflush ( stdout );
+  }
+  printf ( "Consutlar Info exiting...\n" );
+  fflush ( stdout );
+
+  return ( NULL );
+}
