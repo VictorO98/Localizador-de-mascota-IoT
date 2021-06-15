@@ -321,7 +321,7 @@ static void *pControlador (void *arg)
 				default:
 					break;
 			}
-
+ 
 		case Idle:
 			switch (InMsg.signal)
 			{
