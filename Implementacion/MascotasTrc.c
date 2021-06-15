@@ -916,3 +916,56 @@ static void *pConsultarInfo (void *arg)
 
   return ( NULL );
 }
+
+static void *pLocalizador ( void *arg)
+{
+	Localizador_States   state, state_next;
+  	msg_t               InMsg, OutMsg;
+
+	unsigned int lat, lon, localizatorlat, localizatorlon;
+
+  	printf ( "Localizador Mascota started...\n" );
+  	state_next = Idle;
+	lat = 0;
+	lon = 0;
+	localizatorlat = 1;
+	localizatorlon = 1;
+
+	for ( ; ; )
+	{
+		state = state_next
+		InMsg = receiveMessage ( &(queue [LOCALIZADOR_Q]) );
+		printf ( "Localizador Mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+		fflush ( stdout );
+
+		switch ( state )
+		{
+			case Idle:
+				switch (InMsg.signal)
+				{
+					case sPedirDireccion:
+						lat = localizatorlat;
+						lon = localizatorlon;
+
+						OutMsg.signal = (int) sPos
+						OutMsg.valueA = lat;
+						OutMsg.valueB = lon;
+						OutMsg.valueC = InMsg.valueC;
+						OutMsg.valueD = InMsg.valueD;
+						printf ( "packet %d to Consultar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Idle;
+					default: 
+						break;
+				}
+			break;
+		}
+
+		printf ( "Localizador Mascota next state is %d\n", state_next );
+    	fflush ( stdout );
+	}
+	printf ( "Consutlar Info exiting...\n" );
+  	fflush ( stdout );
+  	return ( NULL );
+}

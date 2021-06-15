@@ -159,6 +159,11 @@ typedef enum
     RegisteringPet
 } Consultar_Info_State;
 
+typedef enum
+{
+    Idle
+} Localizador_States;
+
 typedef enum {
 	Idle,Wait
 } AGREGARUSUARIO_States;
