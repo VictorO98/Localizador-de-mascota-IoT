@@ -969,3 +969,84 @@ static void *pLocalizador ( void *arg)
   	fflush ( stdout );
   	return ( NULL );
 }
+
+static void *pGestorBD( void *arg )
+{
+	Gestor_States  state, state_next;
+	msg_t               InMsg, OutMsg;
+
+	unsigned int estado, existe;
+	
+	printf ( "Gestor BD started...\n" );
+  	state_next = Wait;
+	estado = 0;
+	existe = 0;
+
+	for ( ; ; )
+	{
+		state = state_next
+		InMsg = receiveMessage ( &(queue [GESTORBD_Q]) );
+		printf ( "Gestor BD received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+		fflush ( stdout );
+		
+		switch (state)
+		{
+			case Wait:
+				switch (InMsg.signal)
+				{
+					case sEliminarMascota:
+						OutMsg.signal = (int) sEstadoTransaccion;
+						OutMsg.valueA = existe;
+						printf ( "packet %d to Consutlar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Wait;
+					
+					case sRegistrarMascota:
+						OutMsg.signal = (int) sEstadoTransaccion;
+						OutMsg.valueA = existe;
+						printf ( "packet %d to Consutlar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Wait;
+
+					case sRegistrarUsuario:
+						estado = 1;
+						OutMsg.signal = (int) sEstadoTransaccion;
+						OutMsg.valueA = estado;
+						printf ( "packet %d to Consutlar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Wait;
+
+					case sValidarUsuario:
+						estado = 1;
+						OutMsg.signal = (int) sEstadoTransaccion;
+						OutMsg.valueA = estado;
+						printf ( "packet %d to Consutlar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Wait;
+
+					case sBuscarMascota:
+						OutMsg.signal = (int) sEstadoTransaccion;
+						OutMsg.valueA = existe;
+						printf ( "packet %d to Consutlar info\n",  OutMsg.signal );
+						fflush ( stdout );
+						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+						state_next = Wait;
+					default:
+						break;
+				}
+
+			break;
+		}
+
+		printf ( "Gestor BD next state is %d\n", state_next );
+    	fflush ( stdout );
+	}
+	printf ( "Gestor BD exiting...\n" );
+  	fflush ( stdout );
+  	return ( NULL );
+
+}
