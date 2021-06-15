@@ -41,44 +41,44 @@ typedef enum
 typedef enum
 {
     sLogin,   
-    sEliminarMascota,
-    sRegistrarMascota,
-    sRegistrarUsuario,
-    sBuscarMascota,
-    aActualizarInfo
+    sEliminarMascotaUI,
+    sRegistrarMascotaUI,
+    sRegistrarUsuarioUI,
+    sBuscarMascotaUI,
+    aActualizarInfoUI
 } TO_InterfazHumanoComputador_From_UI;                             /* Signals sent to process Interfaz humano computador from user*/
 
 typedef enum
 {
-    sEstadoTransaccion,
-    SPos
+    sEstadoTransaccionUI,
+    SPosUI
 } TO_InterfazHumanoComputador_From_Controlador;                    /* Signals sent to process Interfaz humano computador from Controlador */
 
 typedef enum
 {
-    sValidarUsuario,
-    sEliminarMascota,
-    sRegistrarMascota,
-    sRegistrarUsuario,
-    sBuscarMascota,
-    sActualizarInfo
+    sValidarUsuarioCo,
+    sEliminarMascotaCo,
+    sRegistrarMascotaCo,
+    sRegistrarUsuarioCo,
+    sBuscarMascotaCo,
+    sActualizarInfoCo
 } TO_Controlador_From_InterfazHumanoComputador;                     /* Signals sent to process Controlador from Interfaz humano computador */
 
 typedef enum
 {
-    sEstadoTransaccion,
-    SPos
+    sEstadoTransaccionCo,
+    SPosCo
 } TO_Controlador_From_Servicios;                                    /* Signals sent to process Controlador from Servicios */
 
 typedef enum
 {
-    sValidarUsuario,
-    sEliminarMascota,
-    sRegistrarMascota,
-    sRegistrarUsuario,
-    sBuscarMascota,
-    sActualizarInfo
-} TO_ Servicios_From_Controlador;                                    /* Signals sent to process Servicios from Controlador */
+    sValidarUsuarioSe,
+    sEliminarMascotaSe,
+    sRegistrarMascotaSe,
+    sRegistrarUsuarioSe,
+    sBuscarMascotaSe,
+    sActualizarInfoSe
+} TO_Servicios_From_Controlador;                                    /* Signals sent to process Servicios from Controlador */
 
 typedef enum
 {
@@ -86,102 +86,102 @@ typedef enum
     sEstadoTransaccionB,
     sEstadoTransaccionC,
     sEstadoTransaccionD,
-    sPos
+    sPosSe
 } TO_Servicios_From_ConsultarInfo;                                    /* Signals sent to process Servicios from Consultar info */
 
 typedef enum
 {
-    sValidarUsuario,
-    sEliminarMascota,
-    sRegistrarMascota,
-    sRegistrarUsuario,
-    sBuscarMascota,
-    sActualizarInfo 
+    sValidarUsuarioCI,
+    sEliminarMascotaCI,
+    sRegistrarMascotaCI,
+    sRegistrarUsuarioCI,
+    sBuscarMascotaCI,
+    sActualizarInfoCI 
 } TO_ConsultarInfo_From_Servicios;                                    /* Signals sent to process Consultar info from servicios */
 
 typedef enum
 {
-    SPos
+    SPosCI
 } TO_ConsultarInfo_From_Localizador;                                   /* Signals sent to process Consultar info from localizador */
 
 typedef enum
 {
-    sEstadoTransaccion
+    sEstadoTransaccionCI
 } TO_ConsultarInfo_From_GestorBD;                                      /* Signals sent to process Consultar info from Gestor BD */
 
 typedef enum
 {
-    sPedirDireccion
+    sPedirDireccionLoc
 } TO_Localizador_From_ConsultarInfo;                                    /* Signals sent to Localizador from Consultar info */
 
 typedef enum
 {
-    sValidarUsuario,
-    sEliminarMascota,
-    sRegistrarMascota,
-    sRegistrarUsuario,
-    sBuscarMascota,
-    sActualizarInfo 
+    sValidarUsuarioBD,
+    sEliminarMascotaBD,
+    sRegistrarMascotaBD,
+    sRegistrarUsuarioBD,
+    sBuscarMascotaBD,
+    sActualizarInfoBD
 } TO_GestorBD_From_ConsultarInfo;                                      /* Signals sent to process Gestor BD from Consultar info */
  
 /***( EFSM states )************************************************************/
 
 typedef enum
 {
-    Wait,
-    Unlogged,
-    Logged,
-    Registering,
-    Updating,
-    DeletingPet,
-    RegisteringPet,
-    LocatingPet,
-    Searching,
+    WaitUIS,
+    UnloggedUIS,
+    LoggedUIS,
+    RegisteringUIS,
+    UpdatingUIS,
+    DeletingPetUIS,
+    RegisteringPetUIS,
+    LocatingPetUIS,
+    SearchingUIS,
 } InterfazHumano_States;
 
 typedef enum
 {
-    DeletingPet,
-    Idle,
-    LocatingPet,
-    Login,
-    Registering,
-    RegisteringPet
+    DeletingPetCS,
+    IdleCS,
+    LocatingPetCS,
+    LoginCS,
+    RegisteringCS,
+    RegisteringPetCS
 } Controlador_State; 
 
 typedef enum
 {
-    DeletingPet,
-    Idle,
-    LocatingPet,
-    Wait,
-    Registering,
-    RegisteringPet
+    DeletingPetCIS,
+    IdleCIS,
+    LocatingPetCIS,
+    WaitCIS,
+    RegisteringCIS,
+    RegisteringPetCIS
 } Consultar_Info_State;
 
 typedef enum
 {
-    Idle
+    IdleLoc
 } Localizador_States;
 
 typedef enum
 {
-    Wait
+    WaitBD
 } Gestor_States;
 
 typedef enum {
-	Idle,Wait
+	IdleAU, WaitAU
 } AGREGARUSUARIO_States;
 typedef enum {
-	Idle,Wait
+	IdleAM, WaitAM
 } AGREGARMASCOTA_States;
 typedef enum {
-	Idle,Wait
+	IdleLU, WaitLU
 } LOGINUSUARIO_States;
 
 typedef enum {
-	Idle,Wait
+	IdleLM, WaitLM
 } LOCALIZARMASCOTA_States;
 typedef enum {
-	Idle,Wait
+	IdleEM, WaitEM
 } ELIMINARMASCOTA_States;

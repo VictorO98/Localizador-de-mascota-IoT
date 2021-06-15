@@ -1,8 +1,8 @@
 #include    <stdio.h>
 #include    <string.h>
 #include    <errno.h>
-#include    "phtrdsMsgLyr.h"              /* pthreads message layer fucntion prototypes, 
-                                              constants and structs */
+#include    "phtrdsMsgLyr.h"              /* pthreads message layer fucntion prototypes, constants and structs */
+
 
 static void *pInterfazHumanoComputador ( void *arg );         /* Interfaz Humano Computador process code */
 static void *pControlador ( void *arg );                      /* Controlador process code */
@@ -947,7 +947,7 @@ static void *pLocalizador ( void *arg)
 						lat = localizatorlat;
 						lon = localizatorlon;
 
-						OutMsg.signal = (int) sPos
+						OutMsg.signal = (int) sPos;
 						OutMsg.valueA = lat;
 						OutMsg.valueB = lon;
 						OutMsg.valueC = InMsg.valueC;
@@ -978,15 +978,15 @@ static void *pGestorBD( void *arg )
 	unsigned int estado, existe;
 	
 	printf ( "Gestor BD started...\n" );
-  	state_next = Wait;
+  state_next = Wait;
 	estado = 0;
 	existe = 0;
 
 	for ( ; ; )
 	{
-		state = state_next
+		state = state_next;
 		InMsg = receiveMessage ( &(queue [GESTORBD_Q]) );
-		printf ( "Gestor BD received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueb, state );
+		printf ( "Gestor BD received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueB, state );
 		fflush ( stdout );
 		
 		switch (state)
