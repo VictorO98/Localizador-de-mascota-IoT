@@ -7,18 +7,18 @@
 *
 *******************************************************************************/
 
-#define     BUFSIZE     8     /* number of slots in queues */
-#define     NUM_QUEUES  10    /* number of queues */
-#define     INTERFAZHC_Q      /* queue 0: Interfaz humano computador process */
-#define     CONTROLADOR_Q     /* queue 1: Controlador process */
-#define     AGREGARUSU_Q      /* queue 2: Servicio Agregar Usuario process */
-#define     AGREGARMAS_Q      /* queue 3: Servicio Agregar Mascota process */
-#define     LOGIN_Q           /* queue 4: Servicio Login process */
-#define     LOCALIZAR_Q       /* queue 5: Servicio localizar process */
-#define     ELIMINARMAS_Q     /* queue 6: Servicio eliminar mascota process */
-#define     CONSULTARI_Q      /* queue 7: Consultar info process */
-#define     LOCALIZADOR_Q     /* queue 8: Localizador process */
-#define     GESTORBD_Q        /* queue 9: Gestor process */
+#define     BUFSIZE        8     /* number of slots in queues */
+#define     NUM_QUEUES     10    /* number of queues */
+#define     INTERFAZHC_Q   0     /* queue 0: Interfaz humano computador process */
+#define     CONTROLADOR_Q  1     /* queue 1: Controlador process */
+#define     AGREGARUSU_Q   2     /* queue 2: Servicio Agregar Usuario process */
+#define     AGREGARMAS_Q   3     /* queue 3: Servicio Agregar Mascota process */
+#define     LOGIN_Q        4     /* queue 4: Servicio Login process */
+#define     LOCALIZAR_Q    5     /* queue 5: Servicio localizar process */
+#define     ELIMINARMAS_Q  6     /* queue 6: Servicio eliminar mascota process */
+#define     CONSULTARI_Q   7     /* queue 7: Consultar info process */
+#define     LOCALIZADOR_Q  8     /* queue 8: Localizador process */
+#define     GESTORBD_Q     9     /* queue 9: Gestor process */
 
 /***( message structure )******************************************************/
 
@@ -40,18 +40,18 @@ typedef enum
 
 typedef enum
 {
-    sLogin,   
+    sLoginUI,   
     sEliminarMascotaUI,
     sRegistrarMascotaUI,
     sRegistrarUsuarioUI,
     sBuscarMascotaUI,
-    aActualizarInfoUI
+    sActualizarInfoUI
 } TO_InterfazHumanoComputador_From_UI;                             /* Signals sent to process Interfaz humano computador from user*/
 
 typedef enum
 {
     sEstadoTransaccionUI,
-    SPosUI
+    sPosUI
 } TO_InterfazHumanoComputador_From_Controlador;                    /* Signals sent to process Interfaz humano computador from Controlador */
 
 typedef enum
@@ -67,7 +67,7 @@ typedef enum
 typedef enum
 {
     sEstadoTransaccionCo,
-    SPosCo
+    sPosCo
 } TO_Controlador_From_Servicios;                                    /* Signals sent to process Controlador from Servicios */
 
 typedef enum
@@ -101,7 +101,7 @@ typedef enum
 
 typedef enum
 {
-    SPosCI
+    sPosCI
 } TO_ConsultarInfo_From_Localizador;                                   /* Signals sent to process Consultar info from localizador */
 
 typedef enum
@@ -172,9 +172,11 @@ typedef enum
 typedef enum {
 	IdleAU, WaitAU
 } AGREGARUSUARIO_States;
+
 typedef enum {
 	IdleAM, WaitAM
 } AGREGARMASCOTA_States;
+
 typedef enum {
 	IdleLU, WaitLU
 } LOGINUSUARIO_States;
@@ -182,6 +184,7 @@ typedef enum {
 typedef enum {
 	IdleLM, WaitLM
 } LOCALIZARMASCOTA_States;
+
 typedef enum {
 	IdleEM, WaitEM
 } ELIMINARMASCOTA_States;

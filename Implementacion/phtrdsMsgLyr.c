@@ -9,6 +9,8 @@
 
 #include    "phtrdsMsgLyr.h"
 
+#define     NUM_QUEUES     10    /* number of queues */
+
 msgq_t      queue [NUM_QUEUES];             /* declare queue as an array of
                                                 message queues */
 

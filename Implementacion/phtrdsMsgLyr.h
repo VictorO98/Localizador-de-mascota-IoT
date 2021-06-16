@@ -11,6 +11,8 @@
 #include    <semaphore.h>
 #include    "pMLusrConf.h"    /* User-defined constants and structs */
 
+#define     BUFSIZE        8     /* number of slots in queues */
+
 #define     LOCAL       0     /* semaphores will not be shared with other processes */
 
 typedef struct                            /* message queue structure */
