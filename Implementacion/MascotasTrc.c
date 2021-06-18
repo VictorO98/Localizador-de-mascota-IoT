@@ -49,6 +49,7 @@ int main ( void )
   pthread_t   Localizador_tid;                                /* Localizador tid */
   pthread_t   GestorBD_tid;                                   /* Gestor BD tid */
 
+  
   /* Create queues */
   initialiseQueues();
 
@@ -64,6 +65,7 @@ int main ( void )
   pthread_create ( &Localizador_tid, NULL, pLocalizador, NULL );
   pthread_create ( &GestorBD_tid, NULL, pGestorBD, NULL );
 
+  
   /* Wait for threads to finish */
   pthread_join ( InterfazHumanoComputador_tid, NULL );
   pthread_join ( Controlador_tid, NULL );
@@ -104,12 +106,6 @@ static void *pInterfazHumanoComputador ( void *arg)
   lat = 0;
   lon = 0;
   state_next = UnloggedUIS;
-
-  /* TESTING */
-  OutMsg.signal = (int) sRegistrarUsuarioUI;
-  OutMsg.valueA = dtoUs;
-  sendMessage ( &(queue [INTERFAZHC_Q]), OutMsg ); 
-  
 
 
   for ( ; ; )
