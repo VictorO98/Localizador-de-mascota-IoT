@@ -21,6 +21,7 @@
 #define     LOCALIZADOR_Q  8     /* queue 8: Localizador process */
 #define     GESTORBD_Q     9     /* queue 9: Gestor process */
 #define     NUM_QUEUES     10    /* number of queues */
+#define		MAX_PETS	   10
 
 msgq_t      queue [NUM_QUEUES];             /* declare queue as an array of
                                                 message queues */
@@ -578,6 +579,7 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg )
 	
 	printf ( "Servicio agregar mascota started...\n" );
     state_next =IdleAM;
+    int index=0;
     for ( ; ; ){
     	state = state_next;
     	InMsg = receiveMessage ( &(queue [AGREGARMAS_Q]) );
@@ -589,12 +591,23 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg )
     			switch(InMsg.signal)
     			{
     				case sRegistrarUsuarioSe:
-    					OutMsg.signal = (int) sRegistrarMascotaCI;
-            			OutMsg.valueA = InMsg.valueA;
-						printf ( "packet %d to Consultar info \n",  OutMsg.signal );
-						fflush ( stdout );
-    					sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
-    					state_next=WaitAM;
+    					if(index<NUM_PETS){
+    						OutMsg.signal = (int) sRegistrarMascotaCI;
+            				OutMsg.valueA = InMsg.valueA;
+							printf ( "packet %d to Consultar info \n",  OutMsg.signal );
+							fflush ( stdout );
+    						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
+    						state_next=WaitAM;
+    						index++;
+    						int value;
+    						value=InMsg.valueB;
+    						pthread_create ( &Servicio_LocalizarMascota_tid, NULL, SERVICIOLOCALIZARMASCOTA,&value);
+    						
+						}
+						else{
+							printf("Servicio agregar mascota muchas mascotas\n");
+						}
+    					
     					break;
     				default:
     					break;
@@ -965,38 +978,43 @@ static void *pLocalizador ( void *arg)
 	lon = 0;
 	localizatorlat = 1;
 	localizatorlon = 1;
-
+	int valor=*(int*)arg;
 	for ( ; ; )
 	{
 		state = state_next;
 		InMsg = receiveMessage ( &(queue [LOCALIZADOR_Q]) );
-		printf ( "Localizador Mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueB, state );
-		fflush ( stdout );
-
-		switch ( state )
-		{
-			case IdleLoc:
-				switch (InMsg.signal)
-				{
-					case sPedirDireccionLoc:
-						lat = localizatorlat;
-						lon = localizatorlon;
-
-						OutMsg.signal = (int) sPosCI;
-						OutMsg.valueA = lat;
-						OutMsg.valueB = lon;
-						OutMsg.valueC = InMsg.valueC;
-						OutMsg.valueD = InMsg.valueD;
-						printf ( "packet %d to Consultar info\n",  OutMsg.signal );
-						fflush ( stdout );
-						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
-						state_next = IdleLoc;
-					default: 
-						break;
-				}
-			break;
+		if(InMsg.valueB==valor){
+		
+			printf ( "Localizador Mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueB, state );
+			fflush ( stdout );
+	
+			switch ( state )
+			{
+				case IdleLoc:
+					switch (InMsg.signal)
+					{
+						case sPedirDireccionLoc:
+							lat = localizatorlat;
+							lon = localizatorlon;
+	
+							OutMsg.signal = (int) sPosCI;
+							OutMsg.valueA = lat;
+							OutMsg.valueB = lon;
+							OutMsg.valueC = InMsg.valueC;
+							OutMsg.valueD = InMsg.valueD;
+							printf ( "packet %d to Consultar info\n",  OutMsg.signal );
+							fflush ( stdout );
+							sendMessage ( &(queue [CONSULTARI_Q]), OutMsg ); 
+							state_next = IdleLoc;
+						default: 
+							break;
+					}
+				break;
+			}
 		}
-
+		else{
+			sendMessage ( &(queue [LOCALIZADOR_Q]), InMsg ); 
+		}
 		printf ( "Localizador Mascota next state is %d\n", state_next );
     	fflush ( stdout );
 	}
