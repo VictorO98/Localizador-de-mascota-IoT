@@ -24,7 +24,7 @@
 #define		MAX_PETS	   10
 
 msgq_t      queue [NUM_QUEUES];             /* declare queue as an array of
-                                                message queues */
+                                                message queues  */ 
 
 static void *pInterfazHumanoComputador ( void *arg );         /* Interfaz Humano Computador process code */
 static void *pControlador ( void *arg );                      /* Controlador process code */
