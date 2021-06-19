@@ -63,7 +63,7 @@ int main ( void )
   pthread_create ( &Servicio_LocalizarMascota_tid, NULL, SERVICIOLOCALIZARMASCOTA, NULL );
   pthread_create ( &Servicio_EliminarMascota_tid, NULL, SERVICIOELIMINARMASCOTA, NULL );
   pthread_create ( &ConsultarInfo_tid, NULL, pConsultarInfo, NULL );
-  pthread_create ( &Localizador_tid, NULL, pLocalizador, NULL );
+  //pthread_create ( &Localizador_tid, NULL, pLocalizador, NULL );
   pthread_create ( &GestorBD_tid, NULL, pGestorBD, NULL );
 
   
@@ -73,7 +73,7 @@ int main ( void )
   pthread_join ( Servicio_AgregarUsuario_tid, NULL);
   pthread_join ( Servicio_AgregarMascota_tid, NULL);
   pthread_join ( Servicio_LoginUsuario_tid, NULL);
-  pthread_join ( Servicio_LocalizarMascota_tid, NULL);
+  //pthread_join ( Servicio_LocalizarMascota_tid, NULL);
   pthread_join ( Servicio_EliminarMascota_tid, NULL);
   pthread_join ( ConsultarInfo_tid, NULL );
   pthread_join ( Localizador_tid, NULL );
@@ -576,9 +576,11 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg )
 	printf ( "Servicio agregar mascota started...\n" );
     state_next =IdleAM;
     int index=0;
+    pthread_t  Servicio_LocalizarMascota_tid[MAX_PETS];
     for ( ; ; ){
     	state = state_next;
     	InMsg = receiveMessage ( &(queue [AGREGARMAS_Q]) );
+    	
 		printf ( "Servicio agregar mascota received signal %d, value A: %d  value B: %d in state %d\n", InMsg.signal, InMsg.valueA, InMsg.valueB, state );
     	fflush ( stdout );
   		switch ( state )
@@ -587,18 +589,19 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg )
     			switch(InMsg.signal)
     			{
     				case sRegistrarUsuarioSe:
-    					if(index<NUM_PETS){
+    					if(index<MAX_PETS){
     						OutMsg.signal = (int) sRegistrarMascotaCI;
             				OutMsg.valueA = InMsg.valueA;
 							printf ( "packet %d to Consultar info \n",  OutMsg.signal );
 							fflush ( stdout );
     						sendMessage ( &(queue [CONSULTARI_Q]), OutMsg );
     						state_next=WaitAM;
-    						index++;
-    						int value;
-    						value=InMsg.valueB;
-    						pthread_create ( &Servicio_LocalizarMascota_tid, NULL, SERVICIOLOCALIZARMASCOTA,&value);
     						
+    						int value[MAX_PETS];
+    						value[index]=InMsg.valueB;
+    						
+    						pthread_create ( &Servicio_LocalizarMascota_tid[index], NULL, SERVICIOLOCALIZARMASCOTA,&value[index]);
+    						index++;
 						}
 						else{
 							printf("Servicio agregar mascota muchas mascotas\n");
@@ -631,6 +634,9 @@ static void *SERVICIOAGREGARMASCOTA ( void *arg )
 	}
 	printf ( "Servicio Agregar Mascota exiting...\n" );
   	fflush ( stdout );
+  	for(int i =0;i<MAX_PETS;i++){
+  		  pthread_join (Servicio_LocalizarMascota_tid[i], NULL );
+  	}
 	return ( NULL );
 }
 
@@ -974,7 +980,9 @@ static void *pLocalizador ( void *arg)
 	lon = 0;
 	localizatorlat = 1;
 	localizatorlon = 1;
-	int valor=*(int*)arg;
+	
+	int valor=*((int*)arg);
+	
 	for ( ; ; )
 	{
 		state = state_next;
